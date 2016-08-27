@@ -1,6 +1,6 @@
 {
   "name": "turbo-commit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cli for turbo commit convention",
   "main": "index.js",
   "scripts": {
