@@ -8,14 +8,14 @@ This will make us git logs something nicer and easier to see. Some extra magic c
 
 
 # Example:
----
+    
     [ADD] component: saraza #issue-number
       - This component is in change of do Foo 
       - Also we care about Baz
 
 
 ## Titles:
----
+
 > We must add the tags on the beginning of the commit title, the max length for the entirety title is: *50 characters*
 
 > All the possible tags has only 3 letter on uppercase between Brackets
