@@ -1,6 +1,6 @@
 {
   "name": "turbo-commit",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "CLI tool for Turbo Commit convention",
   "main": "index.js",
   "scripts": {
@@ -26,13 +26,13 @@
   },
   "homepage": "https://github.com/labs-js/turbo-commit#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "inquire": "^0.4.8"
   },
   "bin": {
     "tc": "./index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
-    "inquirer": "^1.1.2"
   }
 }
