@@ -2,6 +2,7 @@
 var program = require('commander');
 const exec = require('child_process').exec;
 const inquirer = require('inquirer');
+const colors = require('colors');
 
 program
     .arguments('<commitMessage>')
@@ -14,12 +15,12 @@ program
                 name: 'selection',
                 message: 'Select tag for your turbo-commit',
                 choices: [
-                    '[ADD] : features commits, adding lines of code',
-                    '[DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.',
-                    '[MOD] : modifying the way of do something, tiny changes',
-                    '[FIX] : bugfixing commits',
-                    '[REF] : commits part of a refactor',
-                    '[BRK] : breaking change commits',
+                    '[ADD] : features commits, adding lines of code'.green,
+                    '[DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.'.red,
+                    '[MOD] : modifying the way of do something, tiny changes'.blue,
+                    '[FIX] : bugfixing commits'.yellow,
+                    '[REF] : commits part of a refactor'.cyan,
+                    '[BRK] : breaking change commits'.magenta,
                 ]
             }]).then(function (answers) {
                 var tag = answers.selection.substring(0, 5);
