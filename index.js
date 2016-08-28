@@ -16,11 +16,12 @@ program
                 message: 'Select tag for your turbo-commit',
                 choices: [
                     '[ADD] : features commits, adding lines of code'.green,
-                    '[DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.'.red,
-                    '[MOD] : modifying the way of do something, tiny changes'.blue,
                     '[FIX] : bugfixing commits'.yellow,
+                    '[MOD] : modifying the way of do something, tiny changes'.blue,
+                    '[DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.'.red,
                     '[REF] : commits part of a refactor'.cyan,
                     '[BRK] : breaking change commits'.magenta,
+                    '[MRG] : merge commits'.white
                 ]
             }]).then(function (answers) {
                 var tag = answers.selection.substring(0, 5);
