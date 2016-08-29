@@ -9,7 +9,7 @@ This will create git logs nicer and easier to see. Some extra magic comes after 
 
 # Example:
     
-    [ADD] component: saraza #issue-number
+    [ADD] component: my change #issue-number
       - This component is in change of do Foo 
       - Also we care about Baz
 
