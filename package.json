@@ -28,10 +28,12 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "inquirer": "^1.1.2",
-    "jasmine-node": "^1.14.5"
+    "inquirer": "^1.1.2"
   },
   "bin": {
     "tc": "./index.js"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
   }
 }
