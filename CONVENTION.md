@@ -4,7 +4,7 @@ A simple and powerful convention for our Git commits.
 
 *Main idea: Every commit done should have a TAG inside the title message.*
 
-This will create git logs nicer and easier to see. Some extra magic comes after it with the `tc` **CLI** (work in progress)
+This will create git logs nicer and easier to see. Some extra magic comes after it with the [Turbo Commit CLI](/README.md)
 
 
 # Example:

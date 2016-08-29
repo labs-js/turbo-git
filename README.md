@@ -3,7 +3,7 @@
 
 # Turbo Commit CLI 
 
-CLI tool for the implement [turbo-commit](/CONVENTION.md) convention easilly
+CLI tool for use the [turbo-commit](/CONVENTION.md) convention easilly
 
 ## Install 
 
@@ -18,6 +18,12 @@ then we are able to use the `tc` command
 
     tc "my commit message"
 
-Then you will be pront with the posibble tags for your turbo-commits:
+Then you will see the posibble tags for your turbo-commits:
 
 <img src="assets/prompt-tag-preview.jpg" alt="prompt-tag-screnshoot" width="600"/>
+
+Choose your tag title, press enter and you're done. 
+
+Congrats! You did your first turbo-commit.
+
+Now you can see it in your `git log`
