@@ -20,4 +20,4 @@ then we are able to use the `tc` command
 
 Then you will be pront with the posibble tags for your turbo-commits:
 
-![prompt screnshoot](assets/prompt-tag-preview.jpg)
+<img src="assets/prompt-tag-preview.jpg" alt="prompt-tag-screnshoot" width="600"/>
