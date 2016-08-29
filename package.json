@@ -4,7 +4,7 @@
   "description": "CLI tool for Turbo Commit convention",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Not implemted yet\""
+    "test": "jasmine-node --verbose --captureExceptions ./"
   },
   "repository": {
     "type": "git",
