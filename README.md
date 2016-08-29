@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?branch=master)](https://travis-ci.org/labs-js/turbo-commit)
+
 # Turbo Commit CLI 
 
 CLI tool for the implement [turbo-commit](/CONVENTION.md) convention easilly
