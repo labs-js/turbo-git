@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?branch=master)](https://travis-ci.org/labs-js/turbo-commit)
+[![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
 
 # Turbo Commit CLI 
 
