@@ -1,6 +1,6 @@
-# Turbo Commit CLI
+# Turbo Commit CLI 
 
-CLI tool for the implement [turbo-commit](https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md) convention easilly
+CLI tool for the implement [turbo-commit](/CONVENTION.md) convention easilly
 
 ## Install 
 
@@ -17,5 +17,4 @@ then we are able to use the `tc` command
 
 Then you will be pront with the posibble tags for your turbo-commits:
 
-
-![prompt screnshoot](https://raw.githubusercontent.com/lab-js/screenshots/preview.jpg)
+![prompt screnshoot](assets/prompt-tag-preview.jpg)
