@@ -1,45 +1,29 @@
-# Turbo Commit
+[![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
+[![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
 
-A simple and powerful convention for our Git commits.
+# Turbo Commit CLI 
 
-*Main idea: All the commits that we do in the repo must have a TAG in the title message.* 
+CLI tool for use the [turbo-commit](/CONVENTION.md) convention easilly
 
-This will make us git logs something nicer and easier to see. Some extra magic comes after it with the `tc` **CLI** (work in progress)
+## Install 
 
-
-# Example:
-    
-    [ADD] component: saraza #issue-number
-      - This component is in change of do Foo 
-      - Also we care about Baz
+    npm install -g turbo-commit
 
 
-## Titles:
+then we are able to use the `tc` command
 
-> We must add the tags on the beginning of the commit title, the max length for the entirety title is: *50 characters*
+## How to use
 
-> All the possible tags has only 3 letter on uppercase between Brackets
+> First use `git add` like you ussualy do.. then commit with the `tc` command as follow:
 
-     [ADD] : features commits, adding lines of code.
-     [DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.
-     [MOD] : modifying the way of do something, tiny changes
-     [FIX] : bugfixing commits
-     [REF] : commits part of a refactor
-     [BRK] : breaking change commits
+    tc "my commit message"
 
-> Why only 3 letter?
+Then you will see the posibble tags for your turbo-commits:
 
-> 1. This is the best way to keep it simple, and nice to see in the git log
-> 2. It will be easier do some search by tag, write some nice regex, etc.
+<img src="assets/prompt-tag-preview.jpg" alt="prompt-tag-screnshoot" width="600"/>
 
+Choose your tag title, press enter and you're done. 
 
->Also the idea is if you are using any issue tracker add the issue at the end of the title something like `#issue-23`*
+Congrats! You did your first turbo-commit.
 
-
-## Description
-
-> The description It's optional, sometimes is necessary sometimes it's not. The max length for our description is: *72 characters*
-> After write the title do an enter.. and the description start. It's nicer write in bullet points so we use `-` for it.
-
-      - This component is in change of do Foo 
-      - Also we care about Baz
+Now you can see it in your `git log`
