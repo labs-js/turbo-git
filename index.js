@@ -58,7 +58,7 @@ program
 
                 function errCallback(error) {
                     if (error && debug) { console.error('exec error: ', error); }
-                    console.log('You need to do a `git add` before do a Turbo Commit'.magenta);
+                    if (error) { console.log('You need to do a `git add` before do a Turbo Commit'.magenta); }
                 }
             });
     }
