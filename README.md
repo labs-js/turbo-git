@@ -4,17 +4,12 @@
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
 
-If you're a turbo-developer, we're sure you always starts your commits messages using tags to clarify what kind of code
-you're pushing.
 
-     [ADD] : features commits, adding lines of code.
-     [DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.
-     [MOD] : modifying the way of do something, tiny changes
-     [FIX] : bugfixing commits
-     [REF] : commits part of a refactor
-     [BRK] : breaking change commits
 
-Wouldn't be great to have a tool so every team member follows the same convention?
+If you're a **turbo-developer**, you'll enjoy using a convention for commits on your projects that ensure readability and understanding. 
+
+
+Furthermore, wouldn't be great to have a tool so every team member follows the same convention?
 
 ## Install 
 
@@ -38,3 +33,6 @@ Choose your tag to wrap your commit message, press enter and you're done.
 Congrats! You did your first turbo-commit.
 
 Now, you can see it in your `git log`
+
+## Coming soon 
+ - After finishing the commit command we'll work on new **turbo-commands** that will make magic.
