@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
 [![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
+[![Code Climate](https://codeclimate.com/github/labs-js/turbo-commit/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-commit)
 
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
@@ -35,4 +36,4 @@ Congrats! You did your first turbo-commit.
 Now, you can see it in your `git log`
 
 ## Coming soon 
- - After finishing the commit command we'll work on new **turbo-commands** that will make magic.
+ - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
