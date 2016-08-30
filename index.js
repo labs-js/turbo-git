@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 var program = require('commander'),
     childProcess = require('child_process'),
-    inquirer = require('inquirer');
+    inquirer = require('inquirer'),
+    debug = false;
 require('colors');
 
 program
+    .version('0.2.0')
+    .usage('"commit message"')
+    .command('tc', 'for make a Turbo Commit')
     .arguments('<commitMessage>')
-    .action(function (commitMessage) {
+    .action(doTurboCommit).parse(process.argv);
+
+    function doTurboCommit(commitMessage) {
         "use strict";
         //SHOW TAG LIST FOR SELECTION
         inquirer.prompt([
@@ -51,7 +57,8 @@ program
                 childProcess.exec('git commit -m "' + commitMessage + '"', errCallback);
 
                 function errCallback(error) {
-                    if (error) { console.error('exec error: ', error); }
+                    if (error && debug) { console.error('exec error: ', error); }
+                    console.log('You need to do a `git add` before do a Turbo Commit'.magenta);
                 }
             });
-    }).parse(process.argv);
+    }
