@@ -6,7 +6,7 @@ var program = require('commander'),
 require('colors');
 
 program
-    .version('0.2.0')
+    .version('0.3.0')
     .usage('"commit message"')
     .command('tc', 'for make a Turbo Commit')
     .arguments('<commitMessage>')
