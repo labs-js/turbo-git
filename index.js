@@ -54,12 +54,19 @@ program
                 var originalMessage = commitMessage;
                 commitMessage = tag + " " + commitMessage;
 
-                //Exec git commit
-                exec('git commit -m "' + commitMessage + '"', (error, stdout, stderr) => {
+                //Exec git branch to check if exist .git files
+                exec('git branch', (error, stdout, stderr) => {
                     if (error) {
-                        console.log('[Error] Have you added your files before tc %s ?'.red,originalMessage);
+                        console.log(stderr);
                         return;
                     }
+                    //Exec git commit
+                    exec('git commit -m "' + commitMessage + '"', (error, stdout, stderr) => {
+                        if (error) {
+                            console.log('[Error] Have you added your files before tc %s ?'.red,originalMessage);
+                            return;
+                        }
+                    });
                 });
 
             });
