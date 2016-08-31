@@ -31,7 +31,7 @@
     "inquirer": "^1.1.2"
   },
   "bin": {
-    "tc": "./bin/index.js"
+    "tc": "./lib/cli.js"
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5"
