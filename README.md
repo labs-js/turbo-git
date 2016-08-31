@@ -1,16 +1,17 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
 [![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
 [![Code Climate](https://codeclimate.com/github/labs-js/turbo-commit/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-commit)
+[![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-orange.svg)](https://github.com/labs-js/turbo-commit/blob/master/README.md)
 
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
 
 
 
-If you're a **turbo-developer**, you'll enjoy using a convention for commits on your projects that ensure readability and understanding. 
+If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding.
 
 
-Furthermore, wouldn't be great to have a tool so every team member follows the same convention?
+Wouldn't be great have a tool that make easier that every team member follows the same convention?
 
 ## Install 
 
@@ -37,3 +38,17 @@ Now, you can see it in your `git log`
 
 ## Coming soon 
  - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
+
+## Extra
+
+Be praud like us that you are using a Turbo Commit! add the tc sheild on your project.
+
+<img class="center" src="https://img.shields.io/badge/Turbo_Commit-on-orange.svg" alt="Turbo Commit: On"/>
+
+Markdown
+    
+    [![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-orange.svg)](https://github.com/labs-js/turbo-commit/blob/master/README.md)
+
+Html
+
+    <img src="https://img.shields.io/badge/Turbo_Commit-on-orange.svg" alt="Turbo Commit: On"/>
