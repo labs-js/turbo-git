@@ -56,7 +56,7 @@ program
 
                 //Exec git commit
                 childProcess.exec('git commit -m "' + commitMessage + '"', errCallback);
-                function errCallback(error) {
+                function errCallback() {
                     //Exec git branch to check if exist .git files
                     childProcess.exec('git branch', function (error, stdout, stderr) {
                         if (error && !debug) {
