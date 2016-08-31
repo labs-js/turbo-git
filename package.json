@@ -2,7 +2,7 @@
   "name": "turbo-commit",
   "version": "0.3.0",
   "description": "CLI tool for Turbo Commit convention",
-  "main": "./test/index.js",
+  "main": "./lib/cli.js",
   "scripts": {
     "test": "jasmine-node --verbose --captureExceptions ./"
   },
