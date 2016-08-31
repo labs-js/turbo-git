@@ -23,9 +23,9 @@ then you're able to use the `tc` command
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `tc` command as follows:
+> First, execute `git add` like you usually do, then commit using `tc commit` command as follows:
 
-    tc "my commit message"
+    tc commit "my commit message"
 
 After that, you'll see the possible tags for your turbo-commits:
 
