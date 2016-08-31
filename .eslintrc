@@ -1,0 +1,75 @@
+{
+  "ecmaFeatures": {
+    "globalReturn": true,
+    "modules": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": false,
+    "node": true
+  },
+  "globals": {
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "expect": true,
+    "spyOn": true
+  },
+  "plugins": [],
+  "rules": {
+    "semi": [2, "always"],
+    "no-cond-assign": 1,
+    "no-console": 0,
+    "no-empty": 1,
+    "no-extra-semi": 1,
+    "no-undef": 1,
+    "no-unreachable": 1,
+    "no-unused-vars": [1, { "vars": "all", "args": "none" }],
+    "no-use-before-define": 0,
+    "no-redeclare": [1, { "builtinGlobals": true }],
+    "no-mixed-spaces-and-tabs": [1, "smart-tabs"],
+    "no-trailing-spaces": [1],
+    "comma-dangle": [2, "never"],
+    "block-scoped-var": 1,
+    "strict": [1, "function"],
+    "indent": 1,
+    "camelcase": [2, { "properties": "always" }],
+    "curly": 1,
+    "quotes": [1, "single", "avoid-escape"],
+    "eqeqeq": [1, "smart"],
+    "newline-after-var": [1, "always"],
+    "no-self-compare": 1,
+    "brace-style": [1, "1tbs", { "allowSingleLine": true }],
+    "eol-last": 0,
+    "padded-blocks": [1, "never"],
+    "keyword-spacing": 1,
+    "space-before-function-paren": [0, "never"],
+    "space-before-blocks": [1, "always"],
+    "one-var": [1, "always"],
+    "vars-on-top": 1,
+    "yoda": [1, "never"],
+    "new-cap": 1
+    /* es6 (not yet)
+    "arrow-parens": [1, "always"],
+    "arrow-spacing": [1, { "before": true, "after": true }],
+    "constructor-super": 1,
+    "generator-star-spacing": [1, { "before": true, "after": false }],
+    "no-class-assign": 1,
+    "no-const-assign": 1,
+    "no-dupe-class-members": 1,
+    "no-this-before-super": 1,
+    "no-var": 1,
+    "object-shorthand": [1, "always"],
+    "prefer-arrow-callback": 1,
+    "prefer-const": 1,
+    "prefer-spread": 1,
+    "prefer-reflect": [1, { exceptions: ["apply", "call", "defineProperty", "getOwnPropertyDescriptor", "getPrototypeOf", "setPrototypeOf", "isExtensible", "getOwnPropertyNames", "preventExtensions", "delete"] }],
+    "prefer-template": 1,
+    "require-yield": 1
+    */
+  }
+  // "parser": "babel-eslint"
+}

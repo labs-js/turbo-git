@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
 [![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
 [![Code Climate](https://codeclimate.com/github/labs-js/turbo-commit/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-commit)
-[![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-orange.svg)](https://github.com/labs-js/turbo-commit/blob/master/README.md)
+[![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md)
+[![npm](https://img.shields.io/npm/v/turbo-commit.svg?style=flat)](https://www.npmjs.com/package/turbo-commit)
 
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
@@ -22,9 +23,9 @@ then you're able to use the `tc` command
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `tc` command as follows:
+> First, execute `git add` like you usually do, then commit using `tc commit` command as follows:
 
-    tc "my commit message"
+    tc commit "my commit message"
 
 After that, you'll see the possible tags for your turbo-commits:
 
@@ -41,14 +42,14 @@ Now, you can see it in your `git log`
 
 ## Extra
 
-Be praud like us that you are using a Turbo Commit! add the tc sheild on your project.
+Be praud like us of that you are using Turbo Commit, add the sheild to your projects.
 
-<img class="center" src="https://img.shields.io/badge/Turbo_Commit-on-orange.svg" alt="Turbo Commit: On"/>
+<a href="https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
 
 Markdown
     
-    [![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-orange.svg)](https://github.com/labs-js/turbo-commit/blob/master/README.md)
+    [![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md)
 
 Html
 
-    <img src="https://img.shields.io/badge/Turbo_Commit-on-orange.svg" alt="Turbo Commit: On"/>
+    <a href="https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
