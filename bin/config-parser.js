@@ -5,11 +5,13 @@ module.exports = (function (configJson) {
     'use strict';
     var self = {};
 
+    self.config = configJson;
     self.commits = configJson.commits;
 
     return {
         getTagsFormat: getTagsFormat,
-        getCommitConf: getCommitConf
+        getCommitConf: getCommitConf,
+        getProperty: getProperty
     };
 
     ////////////////
@@ -29,5 +31,12 @@ module.exports = (function (configJson) {
 
     function getCommitConf() {
         return self.commits;
+    }
+
+    function getProperty(prop) {
+        if (!self.config[prop]) {
+            throw new Error('Undefined Property');
+        }
+        return self.config[prop];
     }
 })(configJson);

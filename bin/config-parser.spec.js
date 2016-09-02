@@ -10,6 +10,10 @@ describe('config_parse.js', function () {
         it('getCommitConf', function () {
             expect(configParser.getCommitConf);
         });
+
+        it('getProperty', function () {
+            expect(configParser.getProperty);
+        });
     });
     describe('getTagsFormat:', function () {
         it('should return an array with elements', function () {
@@ -19,6 +23,17 @@ describe('config_parse.js', function () {
     describe('getCommitConf:', function () {
         it('should return results', function () {
             expect(configParser.getCommitConf().length).toBeGreaterThan(0);
+        });
+    });
+
+    describe('getProperty:', function () {
+        it('should return results with right param', function () {
+            expect(configParser.getProperty('commits').length).toBeGreaterThan(0);
+        });
+        it('should return results with right param', function () {
+            expect(function() {
+                configParser.getProperty();
+            }).toThrow(new Error('Undefined Property'));
         });
     });
 });
