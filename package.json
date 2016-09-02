@@ -32,7 +32,7 @@
     "inquirer": "^1.1.2"
   },
   "bin": {
-    "tc": "./lib/cli.js"
+    "turbo": "./lib/cli.js"
   },
   "devDependencies": {
     "eslint": "^3.4.0",
