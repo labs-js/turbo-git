@@ -9,7 +9,7 @@ module.exports = (function (configJson) {
 
     return {
         getTagsFormat: getTagsFormat,
-        getCommitConfBy: getCommitConfBy
+        getCommitConf: getCommitConf
     };
 
     ////////////////
@@ -27,9 +27,7 @@ module.exports = (function (configJson) {
         return tagFormat;
     }
 
-    function getCommitConfBy(prop) {
-        return self.commits.filter(function (obj) {
-            return obj[prop];
-        });
+    function getCommitConf() {
+        return self.commits;
     }
 })(configJson);

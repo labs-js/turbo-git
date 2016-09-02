@@ -7,8 +7,8 @@ describe('config_parse.js', function () {
         it('getTagsFormat', function () {
             expect(configParser.getTagsFormat);
         });
-        it('getCommitConfBy', function () {
-            expect(configParser.getCommitConfBy);
+        it('getCommitConf', function () {
+            expect(configParser.getCommitConf);
         });
     });
     describe('getTagsFormat:', function () {
@@ -16,12 +16,9 @@ describe('config_parse.js', function () {
             expect(configParser.getTagsFormat().length).toBeGreaterThan(0);
         });
     });
-    describe('getCommitConfBy:', function () {
-        it('should return an empty array without arguments', function () {
-            expect(configParser.getCommitConfBy().length).toBe(0);
-        });
-        it('should return results with a correct parameter type', function () {
-            expect(configParser.getCommitConfBy('tag').length).toBeGreaterThan(0);
+    describe('getCommitConf:', function () {
+        it('should return results', function () {
+            expect(configParser.getCommitConf().length).toBeGreaterThan(0);
         });
     });
 });
