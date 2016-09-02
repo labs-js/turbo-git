@@ -4,7 +4,8 @@
   "description": "CLI tool for Turbo Commit convention",
   "main": "./lib/cli.js",
   "scripts": {
-    "test": "jasmine-node --verbose --captureExceptions ./"
+    "test": "jasmine-node --verbose --captureExceptions ./",
+    "test:watch": "npm test & onchange bin/*.js lib/*.js ./*.spec.js -- npm test"
   },
   "repository": {
     "type": "git",
