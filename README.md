@@ -19,23 +19,25 @@ Wouldn't be great have a tool that make easier that every team member follows th
     npm install -g turbo-commit
 
 
-then you're able to use the `tc` command
+then you're able to use the `turbo` command
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `tc commit` command as follows:
+> First, execute `git add` like you usually do, then commit using `turbo commit` command as follows:
 
-    tc commit "my commit message"
+    turbo commit "my commit message"
 
 After that, you'll see the possible tags for your turbo-commits:
 
-<img src="assets/prompt-tag-preview.jpg" alt="prompt-tag-screnshoot" width="600"/>
+<img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
 
 Choose your tag to wrap your commit message, press enter and you're done.
 
 Congrats! You did your first turbo-commit.
 
-Now, you can see it in your `git log`
+Now, you can see it in your `turbo log`
+
+<img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="600"/>
 
 ## Coming soon 
  - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
