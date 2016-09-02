@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "eslint": "^3.4.0",
-    "jasmine-node": "^1.14.5"
+    "jasmine-node": "^1.14.5",
+    "onchange": "^3.0.0"
   }
 }
