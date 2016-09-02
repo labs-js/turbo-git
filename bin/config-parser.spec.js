@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var configParser = require('./config_parser');
+var configParser = require('./config-parser');
 
 describe('config_parse.js', function () {
     'use strict';
