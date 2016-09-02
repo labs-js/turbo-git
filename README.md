@@ -37,7 +37,7 @@ Congrats! You did your first turbo-commit.
 
 Now, you can see it in your `turbo log`
 
-<img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="600"/>
+<img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="400"/>
 
 ## Coming soon 
  - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
