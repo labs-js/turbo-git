@@ -36,5 +36,6 @@
       "color": "white"
     }
   ],
-  "debug": false
+  "debug": false,
+  "gitLogDefaultLimit": 20
 }
