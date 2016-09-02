@@ -2,9 +2,10 @@
   "name": "turbo-commit",
   "version": "0.3.0",
   "description": "CLI tool for Turbo Commit convention",
-  "main": "index.js",
+  "main": "./lib/cli.js",
   "scripts": {
-    "test": "jasmine-node --verbose --captureExceptions ./"
+    "test": "jasmine-node --verbose --captureExceptions ./",
+    "test:watch": "npm test & onchange bin/*.js lib/*.js ./*.spec.js -- npm test"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,11 @@
     "inquirer": "^1.1.2"
   },
   "bin": {
-    "tc": "./index.js"
+    "turbo": "./lib/cli.js"
   },
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "eslint": "^3.4.0",
+    "jasmine-node": "^1.14.5",
+    "onchange": "^3.0.0"
   }
 }
