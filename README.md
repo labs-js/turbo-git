@@ -12,9 +12,9 @@ If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your
 
 Wouldn't be great have a tool that make easier that every team member follows the same convention?
 
-#DEMO
+## Demo
+<img src="assets/demog.gif" alt="prompt-tag-screnshoot" width="600"/>
 
-![alt text](./assets/demog.gif "Turbo-demo")
 
 ## Install 
 
