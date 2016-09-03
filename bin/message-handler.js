@@ -1,13 +1,13 @@
 require('colors');
 
-module.exports = (function(){
+module.exports = (function () {
     'use strict';
 
     return {
-        showError:showError
-    }
+        showError: showError
+    };
 
-    function showError(errorMessage){
+    function showError(errorMessage) {
         console.log(errorMessage.magenta);
     }
 })();
