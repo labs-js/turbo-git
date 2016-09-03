@@ -25,13 +25,15 @@ then you're able to use the `turbo` command
 
 > First, execute `git add` like you usually do, then commit using `turbo commit` command as follows:
 
-    turbo commit "my commit message"
+    turbo commit
 
 After that, you'll see the possible tags for your turbo-commits:
 
 <img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
 
-Choose your tag to wrap your commit message, press enter and you're done.
+Choose your tag to wrap your commit message, press enter.
+
+Now insert your commit title and you're done
 
 Congrats! You did your first turbo-commit.
 
