@@ -7,12 +7,14 @@
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
 
-
-
 If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding.
 
 
 Wouldn't be great have a tool that make easier that every team member follows the same convention?
+
+#DEMO
+
+![alt text](./assets/demog.gif "Turbo-demo")
 
 ## Install 
 
