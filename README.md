@@ -7,12 +7,14 @@
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
 
-
-
 If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding.
 
 
 Wouldn't be great have a tool that make easier that every team member follows the same convention?
+
+## Demo
+<img src="assets/demo.gif" width="600"/>
+
 
 ## Install 
 
@@ -25,13 +27,15 @@ then you're able to use the `turbo` command
 
 > First, execute `git add` like you usually do, then commit using `turbo commit` command as follows:
 
-    turbo commit "my commit message"
+    turbo commit
 
 After that, you'll see the possible tags for your turbo-commits:
 
 <img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
 
-Choose your tag to wrap your commit message, press enter and you're done.
+Choose your tag to wrap your commit message, press enter.
+
+Now insert your commit title and you're done
 
 Congrats! You did your first turbo-commit.
 
