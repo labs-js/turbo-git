@@ -10,8 +10,9 @@ This will create git logs nicer and easier to see. Some extra magic comes after 
 # Example:
     
     [ADD] component: my change #issue-number
-      - This component is in change of do Foo 
-      - Also we care about Baz
+         - This component is in change of do Foo 
+         - Also we care about Baz
+         - [ADD] some new file
 
 
 ## Titles:
@@ -21,12 +22,12 @@ This will create git logs nicer and easier to see. Some extra magic comes after 
 > Each possible tag has only 3 uppercase letters between Brackets
 
      [ADD] : features commits, adding lines of code.
-     [FIX] : bugfixing commits
-     [MOD] : modifying the way of do something, tiny changes
-     [DEL] : removing lines of code, code cleanup, remove old lib,unused assets, etc.
-     [REF] : commits part of a refactor
-     [BRK] : breaking change commits
-     [MRG] : merge commits
+     [FIX] : bugfixing commits.
+     [MOD] : change commits, tiny changes, modifying the way of do something.
+     [DEL] : deleting commits, code cleanup, remove old libs, deleting files.
+     [REF] : refactor commits, part of a refactor, big changes.
+     [BRK] : breaking changes commits, when we break old APIs.
+     [MRG] : merge commits.
 
 > Why only 3 letter?
 
@@ -40,7 +41,8 @@ This will create git logs nicer and easier to see. Some extra magic comes after 
 ## Description
 
 > The description It's optional, sometimes is necessary sometimes it's not. The max length for our description is: *72 characters*
-> After writing the title press enter.. and the description start. It's nicer to write with bullet points so we use `-` for it.
+> After writing the title press enter.. and the description start. It's nicer to write with bullet points so we use `-` for it. Also we can re use the tags for the titles
 
       - This component is in change of do Foo 
       - Also we care about Baz
+      - [ADD] some new file

@@ -1,6 +1,6 @@
 {
   "name": "turbo-commit",
-  "version": "0.3.0",
+  "version": "0.6.0",
   "description": "CLI tool for Turbo Commit convention",
   "main": "./lib/cli.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "inquirer": "^1.1.2"
   },
   "bin": {
+    "git-turbo": "./lib/git-turbo.js",
     "turbo": "./lib/cli.js"
   },
   "devDependencies": {
