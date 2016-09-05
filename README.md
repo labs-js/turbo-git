@@ -21,11 +21,11 @@ Wouldn't be great have a tool that make easier that every team member follows th
     npm install -g turbo-commit
 
 
-then you're able to use the `turbo` command
+then you're able to use the `turbo` command or in the git form `git turbo <command>`
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `turbo commit` command as follows:
+> First, execute `git add` like you usually do, then commit using `turbo commit` or `git turbo commit` command as follows:
 
     turbo commit
 
