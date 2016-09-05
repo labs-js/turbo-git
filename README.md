@@ -44,11 +44,11 @@ Now, you can see it in your `turbo log`
 <img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="400"/>
 
 ## Coming soon 
- - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
+ - we'll continue work on new **turbo-commands** that will add some extra magic.
 
-## Extra
+## Badge
 
-Be praud like us of that you are using Turbo Commit, add the sheild to your projects.
+Be proud like us that you are using Turbo Commit, add the Badge to your projects.
 
 <a href="https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
 
