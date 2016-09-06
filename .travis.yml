@@ -8,3 +8,4 @@ notifications:
       - alan.campora@gmail.com
     on_success: [change]
     on_failure: [always]
+after_success: npm run coverage
