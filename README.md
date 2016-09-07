@@ -1,8 +1,12 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
-[![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
+[![Coverage Status](https://coveralls.io/repos/github/labs-js/turbo-commit/badge.svg?branch=test-coverage)](https://coveralls.io/github/labs-js/turbo-commit?branch=test-coverage)
 [![Code Climate](https://codeclimate.com/github/labs-js/turbo-commit/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-commit)
 [![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md)
 [![npm](https://img.shields.io/npm/v/turbo-commit.svg?style=flat)](https://www.npmjs.com/package/turbo-commit)
+[![bitHound Overall Score](https://www.bithound.io/github/labs-js/turbo-commit/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-commit)
+
+[![npm](https://img.shields.io/gitter/room/turbo-commit/turbo-commit.svg?style=flat)](https://gitter.im/turbo-commit/Lobby)
+
 
 # Turbo Commit CLI
 CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
@@ -21,11 +25,11 @@ Wouldn't be great have a tool that make easier that every team member follows th
     npm install -g turbo-commit
 
 
-then you're able to use the `turbo` command
+then you're able to use the `turbo` command or in the git form `git turbo <command>`
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `turbo commit` command as follows:
+> First, execute `git add` like you usually do, then commit using `turbo commit` or `git turbo commit` command as follows:
 
     turbo commit
 
@@ -44,11 +48,11 @@ Now, you can see it in your `turbo log`
 <img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="400"/>
 
 ## Coming soon 
- - After finishing the commit command we'll work on new **turbo-commands** that will add some extra magic.
+ - we'll continue work on new **turbo-commands** that will add some extra magic.
 
-## Extra
+## Badge
 
-Be praud like us of that you are using Turbo Commit, add the sheild to your projects.
+Be proud like us that you are using Turbo Commit, add the Badge to your projects.
 
 <a href="https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
 
