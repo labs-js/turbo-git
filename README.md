@@ -10,7 +10,7 @@
 
 # Turbo Commit CLI
 
-CLI tool originally thought for implement the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. It's also a nice tuning for git commands without configuring anything.
+CLI tool originally thought for implement the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. It's also a nice tuning for git commands out of the box.
 
 If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding. You can also make a great improvement about how use git in the command line day by day. 
 Wouldn't be great have a tool that make easier implement all of this?
@@ -33,15 +33,17 @@ All the turbo command will be available from the turbo command and from git also
 
 > First, execute `turbo add` you will be prompt with the follow:
 
-<img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
+<img src="assets/prompt-turbo-add.png" alt="prompt-turbo-add.png" width="200"/>
 
-> Then you can commit using `turbo commit` command as follows:
+Select want you want to add moving with the arrow key and pressing space.. then enter. 
+
+> Now you are able to commit using `turbo commit` command as follows:
 
     turbo commit
 
 After that, you'll see the possible tags for your turbo-commits:
 
-<img src="assets/prompt-turbo-add" alt="prompt-tag-screnshoot" width="100"/>
+<img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
 
 Choose your tag to wrap your commit message, press enter.
 
