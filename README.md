@@ -9,18 +9,17 @@
 
 
 # Turbo Commit CLI
-CLI tool for use the [turbo-commit](/CONVENTION.md) convention easily.
 
-If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding.
+CLI tool originally thought for implement the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. It's also a nice tuning for git commands without configuring anything.
 
-
-Wouldn't be great have a tool that make easier that every team member follows the same convention?
+If you're a **turbo-developer**, you'll enjoy using a convention for GIT on your projects that ensure readability and understanding. You can also make a great improvement about how use git in the command line day by day. 
+Wouldn't be great have a tool that make easier implement all of this?
 
 ## Demo
 <img src="assets/demo.gif" width="600"/>
 
 
-## Install 
+## Install
 
     npm install -g turbo-commit
 
@@ -29,32 +28,42 @@ then you're able to use the `turbo` command or in the git form `git turbo <comma
 
 ## How to use
 
-> First, execute `git add` like you usually do, then commit using `turbo commit` or `git turbo commit` command as follows:
+All the turbo command will be available from the turbo command and from git also. So you will able to do `turbo command` and `git turbo command` as well.
+
+
+> First, execute `turbo add` you will be prompt with the follow:
+
+<img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
+
+> Then you can commit using `turbo commit` command as follows:
 
     turbo commit
 
 After that, you'll see the possible tags for your turbo-commits:
 
-<img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
+<img src="assets/prompt-turbo-add" alt="prompt-tag-screnshoot" width="100"/>
 
 Choose your tag to wrap your commit message, press enter.
 
-Now insert your commit title and you're done
+Now insert your commit title and the description if you want and you're done.
 
 Congrats! You did your first turbo-commit.
 
-Now, you can see it in your `turbo log`
+Now, you can see it in your with the corresponding commit color`turbo log`
 
 <img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="400"/>
 
 ## Coming soon 
+
  - we'll continue work on new **turbo-commands** that will add some extra magic.
+
+- We are thinking in implement other commit conventions and  let you write your own conventions in a easy way.
 
 ## Badge
 
 Be proud like us that you are using Turbo Commit, add the Badge to your projects.
 
-<a href="https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
+<a href="https://github.com/labs-js/turbo-commit/blob/master/README.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
 
 Markdown
     
