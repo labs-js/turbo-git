@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 var configParser = require('./config-parser');
 
+//TODO: implement a mock config.json
+
 describe('config_parse.js', function () {
     'use strict';
     describe('should have defined:', function () {
@@ -30,10 +32,19 @@ describe('config_parse.js', function () {
         it('should return results with right param', function () {
             expect(configParser.getProperty('commits').length).toBeGreaterThan(0);
         });
-        it('should return results with right param', function () {
+        it('should throw error without params', function () {
             expect(function() {
                 configParser.getProperty();
             }).toThrow(new Error('Undefined Property'));
+        });
+        it('should throw error with an unknown property', function () {
+            expect(function() {
+                configParser.getProperty('hola-test');
+            }).toThrow(new Error('Undefined Property'));
+        });
+        it('should return result with a property that It has boolean value', function () {
+            //TODO: this sould be dode with mock data.
+            expect(configParser.getProperty('debug')).toBe(false);
         });
     });
 });
