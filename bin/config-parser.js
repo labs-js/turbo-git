@@ -34,7 +34,7 @@ module.exports = (function (configJson) {
     }
 
     function getProperty(prop) {
-        if (!self.config[prop]) {
+        if ( !self.config.hasOwnProperty(prop) ) {
             throw new Error('Undefined Property');
         }
         return self.config[prop];
