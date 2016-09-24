@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 require('colors');
 
 module.exports = (function () {
