@@ -37,5 +37,5 @@
     }
   ],
   "debug": false,
-  "gitLogDefaultLimit": 20
+  "gitLogDefaultLimit": 50
 }
