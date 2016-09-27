@@ -9,6 +9,9 @@
     "coverage": "nyc report --reporter=text-lcov > coverage.json",
     "release": "standard-version"
   },
+  "engines": {
+    "node": "6.5.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/labs-js/turbo-commit.git"
