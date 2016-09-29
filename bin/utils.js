@@ -9,6 +9,8 @@ module.exports = (function () {
     };
 
     function showError(errorMessage) {
-        console.log(errorMessage.magenta);
+        var error = errorMessage || 'error';
+
+        console.log(error.magenta);
     }
 })();
