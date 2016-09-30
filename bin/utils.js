@@ -1,16 +1,38 @@
 #!/usr/bin/env node
-require('colors');
-
-module.exports = (function () {
+module.exports = function (console) {
     'use strict';
+    return (function (console) {
+        var childProcess = require('child_process'),
+            Promise = require('promise');
 
-    return {
-        showError: showError
-    };
+        require('colors');
 
-    function showError(errorMessage) {
-        var error = errorMessage || 'error';
+        return {
+            checkGitRepoExistence: checkGitRepoExistence,
+            showError: showError
+        };
 
-        console.log(error.magenta);
-    }
-})();
+        function showError(errorMessage) {
+            var error = errorMessage || 'error';
+
+            console.log(error.magenta);
+        }
+
+        //Exec git branch to check if exist .git files
+        function checkGitRepoExistence () {
+            return new Promise(function (resolve, reject) {
+                var checkRepoCommand = childProcess.exec('git branch');
+
+                checkRepoCommand.stderr.on('data', function (err) {
+                    reject(err);
+                });
+
+                checkRepoCommand.on('close', function (code) {
+                    if (code === 0) { //0 means ok, 128 means error
+                        resolve();
+                    }
+                });
+            });
+        }
+    })(console);
+};
