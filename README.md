@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/labs-js/turbo-commit.svg?)](https://travis-ci.org/labs-js/turbo-commit)
-[![Coverage Status](https://coveralls.io/repos/github/labs-js/turbo-commit/badge.svg?branch=develop)](https://coveralls.io/github/labs-js/turbo-commit?branch=test-coverage)
 [![Code Climate](https://codeclimate.com/github/labs-js/turbo-commit/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-commit)
 [![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-commit/blob/master/CONVENTION.md)
 [![npm](https://img.shields.io/npm/v/turbo-commit.svg?style=flat)](https://www.npmjs.com/package/turbo-commit)
