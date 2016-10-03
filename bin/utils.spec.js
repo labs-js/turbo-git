@@ -22,10 +22,6 @@ describe('utils.js', function () {
         shell.exec('git init');
     }
 
-    function commit (msg) {
-        shell.exec('git commit --allow-empty -m"' + msg + '"');
-    }
-
     function finishTemp () {
         shell.cd('../');
         shell.rm('-rf', 'tmp');
