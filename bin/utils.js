@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-module.exports = function (console) {
+module.exports = function (_console) {
     'use strict';
     return (function (console) {
         var childProcess = require('child_process'),
@@ -34,5 +34,5 @@ module.exports = function (console) {
                 });
             });
         }
-    })(console);
+    })(_console || console);
 };
