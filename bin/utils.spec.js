@@ -87,7 +87,6 @@ describe('utils.js', function () {
                 it('should resolve the promise with a git repo init', function (done) {
                     gitInitInTempFolder();
                     utils.checkGitRepoExistence().then(function () {
-                        expect('').toBe('');
                         finishTemp();
                         done();
                     });
