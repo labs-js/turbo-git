@@ -1,11 +1,16 @@
 {
   "name": "turbo-commit",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "CLI tool for Turbo Commit convention",
   "main": "./lib/cli.js",
   "scripts": {
-    "test": "jasmine-node --verbose --captureExceptions ./",
-    "test:watch": "npm test & onchange bin/*.js lib/*.js ./*.spec.js -- npm test"
+    "test": "nyc jasmine-node --verbose --captureExceptions ./",
+    "test:watch": "npm test & onchange bin/*.js lib/*.js ./*.spec.js -- npm test",
+    "coverage": "nyc report --reporter=text-lcov > coverage.json",
+    "release": "standard-version"
+  },
+  "engines": {
+    "node": "6.5.0"
   },
   "repository": {
     "type": "git",
@@ -29,15 +34,20 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "inquirer": "^1.1.2"
+    "inquirer": "^1.1.2",
+    "promise": "^7.1.1"
   },
   "bin": {
-    "git-turbo": "./lib/git-turbo.js",
+    "git-turbo": "./lib/git/git-turbo.js",
     "turbo": "./lib/cli.js"
   },
   "devDependencies": {
+    "console-mock": "^1.0.24",
     "eslint": "^3.4.0",
     "jasmine-node": "^1.14.5",
-    "onchange": "^3.0.0"
+    "nyc": "^8.1.0",
+    "onchange": "^3.0.0",
+    "shelljs": "^0.7.4",
+    "standard-version": "^2.4.0"
   }
 }

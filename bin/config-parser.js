@@ -6,7 +6,7 @@ module.exports = (function (configJson) {
     var self = {};
 
     self.config = configJson;
-    self.commits = configJson.commits;
+    self.commits = getProperty('commits');
 
     return {
         getTagsFormat: getTagsFormat,
@@ -34,7 +34,7 @@ module.exports = (function (configJson) {
     }
 
     function getProperty(prop) {
-        if (!self.config[prop]) {
+        if ( !self.config.hasOwnProperty(prop) ) {
             throw new Error('Undefined Property');
         }
         return self.config[prop];
