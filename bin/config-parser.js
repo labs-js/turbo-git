@@ -1,42 +1,50 @@
 #!/usr/bin/env node
-var configJson = require('./config.json');
-
-module.exports = (function (configJson) {
+module.exports = function (configJson) {
     'use strict';
-    var self = {};
 
-    self.config = configJson;
-    self.commits = getProperty('commits');
+    configJson =  configJson || require('./config.json');
 
-    return {
-        getTagsFormat: getTagsFormat,
-        getCommitConf: getCommitConf,
-        getProperty: getProperty
-    };
+    return (function (configJson) {
+        var self = {};
 
-    ////////////////
+        self.config = configJson;
+        self.commits = getProperty('commits');
+        initConfig();
 
-    function getTagsFormat() {
-        var tagFormat = [],
-            colors = require('colors/safe');
+        return {
+            getTagsFormat: getTagsFormat,
+            getCommitConf: getCommitConf,
+            getProperty: getProperty
+        };
 
-        self.commits.forEach(function (val) {
-            tagFormat.push({
-                'name': colors[val.color](val.tag + ' : ' + val.desc),
-                'value': val.tag
-            });
-        });
-        return tagFormat;
-    }
+        ////////////////
 
-    function getCommitConf() {
-        return self.commits;
-    }
-
-    function getProperty(prop) {
-        if ( !self.config.hasOwnProperty(prop) ) {
-            throw new Error('Undefined Property');
+        function initConfig() {
+            //check if there a .turbocommit config file, otherwise use the default TC conf
         }
-        return self.config[prop];
-    }
-})(configJson);
+
+        function getTagsFormat() {
+            var tagFormat = [],
+                colors = require('colors/safe');
+
+            self.commits.forEach(function (val) {
+                tagFormat.push({
+                    'name': colors[val.color](val.tag + ' : ' + val.desc),
+                    'value': val.tag
+                });
+            });
+            return tagFormat;
+        }
+
+        function getCommitConf() {
+            return self.commits;
+        }
+
+        function getProperty(prop) {
+            if (!self.config.hasOwnProperty(prop)) {
+                throw new Error('Undefined Property');
+            }
+            return self.config[prop];
+        }
+    })(configJson);
+};
