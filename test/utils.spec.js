@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var consoleMock = require('console-mock'),
     console = consoleMock.create(),
-    utils = require('./utils')(console),
+    utils = require('./../bin/utils')(console),
     childProcess = require('child_process'),
     shell = require('shelljs');
 
