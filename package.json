@@ -4,8 +4,8 @@
   "description": "CLI tool for Turbo Commit convention",
   "main": "./lib/cli.js",
   "scripts": {
-    "test": "nyc jasmine-node --verbose --captureExceptions ./",
-    "test:watch": "npm test & onchange bin/*.js lib/*.js ./*.spec.js -- npm test",
+    "test": "nyc jasmine-node --verbose --captureExceptions test",
+    "test:watch": "npm test & onchange bin/*.js lib/*.js test/* -- npm test",
     "coverage": "nyc report --reporter=text-lcov > coverage.json",
     "release": "standard-version"
   },
