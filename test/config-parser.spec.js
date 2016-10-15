@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-var configParser = require('./config-parser');
-
-//TODO: implement a mock config.json
+var mockConfig = require('./mock.config.json'),
+    configParser = require('./../bin/config-parser')(mockConfig);
 
 describe('config_parse.js', function () {
     'use strict';
@@ -43,7 +42,6 @@ describe('config_parse.js', function () {
             }).toThrow(new Error('Undefined Property'));
         });
         it('should return result with a property that It has boolean value', function () {
-            //TODO: this sould be dode with mock data.
             expect(configParser.getProperty('debug')).toBe(false);
         });
     });
