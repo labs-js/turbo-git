@@ -1,15 +1,29 @@
 #!/usr/bin/env node
-module.exports = function (configJson) {
-    'use strict';
+var shell = require('shelljs'),
+    fs = require('fs'),
+    path = require('path'),
+    utils = require('./utils')();
 
-    configJson =  configJson || require('./config.json');
+shell.config.silent = false;
+
+module.exports = function (_configJson) {
+    'use strict';
+    var configJson,
+        dotFileConfPath;
+
+    dotFileConfPath = path.join(utils.getGitRepoMainPath(), '.turbocommit');
+
+    if ( shell.test('-f', dotFileConfPath ) ) {//check if there a .turbocommit config file
+        configJson = JSON.parse(fs.readFileSync(dotFileConfPath, 'utf8'));
+    } else {//otherwise use default conf
+        configJson =  require('./config.json');
+    }
 
     return (function (configJson) {
         var self = {};
 
         self.config = configJson;
         self.commits = getProperty('commits');
-        initConfig();
 
         return {
             getTagsFormat: getTagsFormat,
@@ -18,10 +32,6 @@ module.exports = function (configJson) {
         };
 
         ////////////////
-
-        function initConfig() {
-            //check if there a .turbocommit config file, otherwise use the default TC conf
-        }
 
         function getTagsFormat() {
             var tagFormat = [],
@@ -42,9 +52,10 @@ module.exports = function (configJson) {
 
         function getProperty(prop) {
             if (!self.config.hasOwnProperty(prop)) {
-                throw new Error('Undefined Property');
+                throw new Error('Undefined Property: ', prop);
             }
             return self.config[prop];
         }
-    })(configJson);
+
+    })(_configJson || configJson);
 };
