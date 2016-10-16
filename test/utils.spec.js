@@ -3,7 +3,8 @@ var consoleMock = require('console-mock'),
     console = consoleMock.create(),
     utils = require('./../bin/utils')(console),
     childProcess = require('child_process'),
-    shell = require('shelljs');
+    shell = require('shelljs'),
+    helpers = require('./helpers');
 
 require('colors');
 
@@ -13,19 +14,6 @@ consoleMock.enabled(false);//disable console.log prints
 
 describe('utils.js', function () {
     'use strict';
-
-    function gitInitInTempFolder () {
-        shell.rm('-rf', 'tmp');
-        shell.config.silent = true;
-        shell.mkdir('tmp');
-        shell.cd('tmp');
-        shell.exec('git init');
-    }
-
-    function finishTemp () {
-        shell.cd('../');
-        shell.rm('-rf', 'tmp');
-    }
 
     describe('should have defined', function () {
         it('checkGitRepoExistence', function () {
@@ -88,14 +76,14 @@ describe('utils.js', function () {
 
             describe('tests with a real git repo:', function () {
                 it('should resolve the promise with a git repo init', function (done) {
-                    gitInitInTempFolder();
+                    helpers.gitInitInTempFolder();
                     utils.checkGitRepoExistence().then(function () {
-                        finishTemp();
+                        helpers.finishTemp();
                         done();
                     });
                 });
                 it('should reject the promise without a git repo and return a error string', function (done) {
-                    finishTemp();
+                    helpers.finishTemp();
                     shell.cd('../'); //there is no repo here I guess
                     utils.checkGitRepoExistence().catch(function (data) {
                         expect(typeof data).toBe('string');
@@ -111,9 +99,9 @@ describe('utils.js', function () {
                 }).toThrow();
             });
             it('should return a string path inside of git repo', function () {
-                gitInitInTempFolder();
+                helpers.gitInitInTempFolder();
                 expect(typeof utils.getGitRepoMainPath()).toBe('string');
-                finishTemp();
+                helpers.finishTemp();
             });
         });
     });
