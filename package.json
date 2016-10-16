@@ -35,7 +35,8 @@
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "inquirer": "^1.1.2",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "shelljs": "^0.7.4"
   },
   "bin": {
     "git-turbo": "./lib/git/git-turbo.js",
@@ -47,7 +48,6 @@
     "jasmine-node": "^1.14.5",
     "nyc": "^8.1.0",
     "onchange": "^3.0.0",
-    "shelljs": "^0.7.4",
     "standard-version": "^2.4.0"
   }
 }
