@@ -34,6 +34,9 @@ describe('utils.js', function () {
         it('showError', function () {
             expect(utils.showError).toBeDefined();
         });
+        it('getGitRepoMainPath', function () {
+            expect(utils.getGitRepoMainPath).toBeDefined();
+        });
     });
     describe('behavior', function () {
         describe('showError', function () {
@@ -83,7 +86,7 @@ describe('utils.js', function () {
                 expect(childProcess.exec).toHaveBeenCalledWith('git branch');
             });
 
-            describe('with a real git repo', function () {
+            describe('tests with a real git repo:', function () {
                 it('should resolve the promise with a git repo init', function (done) {
                     gitInitInTempFolder();
                     utils.checkGitRepoExistence().then(function () {
@@ -99,6 +102,18 @@ describe('utils.js', function () {
                         done();
                     });
                 });
+            });
+        });
+        describe('getGitRepoMainPath', function () {
+            it('should trow an error without repo', function () {
+                expect(function() {
+                    utils.getGitRepoMainPath();
+                }).toThrow();
+            });
+            it('should return a string path inside of git repo', function () {
+                gitInitInTempFolder();
+                expect(typeof utils.getGitRepoMainPath()).toBe('string');
+                finishTemp();
             });
         });
     });
