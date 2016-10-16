@@ -9,6 +9,7 @@ module.exports = function (_console) {
 
         return {
             checkGitRepoExistence: checkGitRepoExistence,
+            getGitRepoMainPath: getGitRepoMainPath,
             showError: showError
         };
 
@@ -33,6 +34,12 @@ module.exports = function (_console) {
                     }
                 });
             });
+        }
+
+        function getGitRepoMainPath() {
+            var res = childProcess.execSync('git rev-parse --show-toplevel', {encoding: 'UTF-8'});
+
+            return res.trim();
         }
     })(_console || console);
 };
