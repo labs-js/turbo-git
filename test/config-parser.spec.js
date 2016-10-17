@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 var mockConfig = require('./mock.config.json'),
-    configParser = require('./../bin/config-parser')(mockConfig);
+    configParser = require('./../bin/config-parser')(mockConfig),
+    defaultConf = require('./../bin/config.json'),
+    shell = require('shelljs'),
+    helpers = require('./helpers');
 
 describe('config_parse.js', function () {
     'use strict';
+
+    beforeEach(function () {
+        configParser = require('./../bin/config-parser')(mockConfig);
+    });
+
     describe('should have defined:', function () {
         it('getTagsFormat', function () {
             expect(configParser.getTagsFormat);
@@ -11,7 +19,6 @@ describe('config_parse.js', function () {
         it('getCommitConf', function () {
             expect(configParser.getCommitConf);
         });
-
         it('getProperty', function () {
             expect(configParser.getProperty);
         });
@@ -44,5 +51,23 @@ describe('config_parse.js', function () {
         it('should return result with a property that It has boolean value', function () {
             expect(configParser.getProperty('debug')).toBe(false);
         });
+    });
+
+    describe('init:', function () {
+        it('should read the default conf without .turbocommit', function () {
+            configParser = require('./../bin/config-parser')();
+            expect(configParser.getProperty('commits')).toEqual(defaultConf.commits);
+        });
+
+        it('should read the config for the .turbocommit file if exists', function () {
+            helpers.gitInitInTempFolder();
+            shell.cat('../test/mock.config.json').to('.turbocommit');
+            configParser = require('./../bin/config-parser')();
+            expect(configParser.getCommitConf()).toEqual(mockConfig.commits);
+            helpers.finishTemp();
+        });
+        // it('should call to init conf command if there is not .turbocommit file', function () {
+        //     expect(false).toBe(true);
+        // });
     });
 });
