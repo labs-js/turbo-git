@@ -1,7 +1,7 @@
 {
   "commits": [
     {
-      "tag": "feature",
+      "tag": "feat",
       "desc": "features commits.",
       "color": "green"
     },
