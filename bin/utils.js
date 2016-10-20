@@ -37,7 +37,16 @@ module.exports = function (_console) {
         }
 
         function getGitRepoMainPath() {
-            var res = childProcess.execSync('git rev-parse --show-toplevel', {encoding: 'UTF-8'});
+            var check = childProcess.spawnSync('git',['branch']),
+                err = check.stderr.toString().trim(),
+                res;
+
+            if (err) {
+                showError(err);
+                process.exit(1);//exit process with code error
+            }
+
+            res = childProcess.execSync('git rev-parse --show-toplevel', {encoding: 'UTF-8'});
 
             return res.trim();
         }
