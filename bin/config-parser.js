@@ -51,8 +51,10 @@ module.exports = function (_configJson) {
         }
 
         function getProperty(prop) {
-            if (!self.config.hasOwnProperty(prop)) {
-                throw new Error('Undefined Property');
+	    if (!self.config.hasOwnProperty(prop)) {
+                utils.showError('Undefined Property ' + (prop || '') +
+		'\nPlease check your .turbocommit file');
+		process.exit(1);
             }
             return self.config[prop];
         }
