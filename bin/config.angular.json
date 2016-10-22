@@ -1,5 +1,8 @@
 {
-  "commits": [
+  "git-log-command": "git log -n50 --reverse",
+  "turbo-log-parsing-limit": 50,
+  "turbo-log-extras": {},
+  "commit-convention": [
     {
       "tag": "feat",
       "desc": "features commits.",
@@ -36,6 +39,5 @@
       "color": "magenta"
     }
   ],
-  "debug": false,
-  "gitLogDefaultLimit": 50
+  "debug": false
 }

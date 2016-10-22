@@ -23,7 +23,7 @@ module.exports = function (_configJson) {
         var self = {};
 
         self.config = configJson;
-        self.commits = getProperty('commits');
+        self.commits = getProperty('commit-convention');
 
         return {
             getTagsFormat: getTagsFormat,
@@ -51,10 +51,10 @@ module.exports = function (_configJson) {
         }
 
         function getProperty(prop) {
-	    if (!self.config.hasOwnProperty(prop)) {
+            if (!self.config.hasOwnProperty(prop)) {
                 utils.showError('Undefined Property ' + (prop || '') +
-		'\nPlease check your .turbocommit file');
-		process.exit(1);
+                    '\nPlease check your .turbocommit file');
+                process.exit(1);
             }
             return self.config[prop];
         }
