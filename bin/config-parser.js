@@ -6,7 +6,7 @@ var shell = require('shelljs'),
 
 shell.config.silent = false;
 
-module.exports = function (_configJson) {
+module.exports = function (_configJson, _process) {
     'use strict';
     var configJson,
         dotFileConfPath;
@@ -19,7 +19,7 @@ module.exports = function (_configJson) {
         configJson =  require('./config.json');
     }
 
-    return (function (configJson) {
+    return (function (configJson, process) {
         var self = {};
 
         self.config = configJson;
@@ -58,6 +58,5 @@ module.exports = function (_configJson) {
             }
             return self.config[prop];
         }
-
-    })(_configJson || configJson);
+    })(_configJson || configJson, _process || process);
 };
