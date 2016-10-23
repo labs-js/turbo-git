@@ -36,7 +36,7 @@ describe('config_parse.js', function () {
 
     describe('getProperty:', function () {
         it('should return results with right param', function () {
-            expect(configParser.getProperty('commits').length).toBeGreaterThan(0);
+            expect(configParser.getProperty('commitConvention').length).toBeGreaterThan(0);
         });
         it('should throw error without params', function () {
             expect(function() {
@@ -56,14 +56,14 @@ describe('config_parse.js', function () {
     describe('init:', function () {
         it('should read the default conf without .turbocommit', function () {
             configParser = require('./../bin/config-parser')();
-            expect(configParser.getProperty('commits')).toEqual(defaultConf.commits);
+            expect(configParser.getProperty('commitConvention')).toEqual(defaultConf.commitConvention);
         });
 
         it('should read the config for the .turbocommit file if exists', function () {
             helpers.gitInitInTempFolder();
             shell.cat('../test/mock.config.json').to('.turbocommit');
             configParser = require('./../bin/config-parser')();
-            expect(configParser.getCommitConf()).toEqual(mockConfig.commits);
+            expect(configParser.getCommitConf()).toEqual(mockConfig.commitConvention);
             helpers.finishTemp();
         });
         // it('should call to init conf command if there is not .turbocommit file', function () {

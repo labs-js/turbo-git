@@ -1,8 +1,8 @@
 {
-  "git-log-command": "git log -n50 --reverse",
-  "turbo-log-parsing-limit": 50,
-  "turbo-log-extras": {},
-  "commit-convention": [
+  "gitLogCommand": "git log -n50 --reverse",
+  "turboLogParsingLimit": 50,
+  "turboLogExtras": {},
+  "commitConvention": [
     {
       "tag": "[ADD]",
       "desc": "features commits, adding lines of code.",

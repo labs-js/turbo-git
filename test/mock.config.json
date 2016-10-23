@@ -1,5 +1,8 @@
 {
-  "commits": [
+  "gitLogCommand": "git log -n50 --reverse",
+  "turboLogParsingLimit": 50,
+  "turboLogExtras": {},
+  "commitConvention": [
     {
       "tag": "[TAG]",
       "desc": "This is a mock desc.",
@@ -11,6 +14,5 @@
       "color": "yellow"
     }
   ],
-  "debug": false,
-  "gitLogDefaultLimit": 50
+  "debug": false
 }

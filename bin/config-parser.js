@@ -23,7 +23,7 @@ module.exports = function (_configJson) {
         var self = {};
 
         self.config = configJson;
-        self.commits = getProperty('commit-convention');
+        self.commits = getProperty('commitConvention');
 
         return {
             getTagsFormat: getTagsFormat,
