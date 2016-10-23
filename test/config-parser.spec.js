@@ -3,7 +3,8 @@ var mockConfig = require('./mock.config.json'),
     configParser = require('./../bin/config-parser')(mockConfig),
     defaultConf = require('./../bin/config.json'),
     shell = require('shelljs'),
-    helpers = require('./helpers');
+    helpers = require('./helpers'),
+    mockProcess;
 
 describe('config_parse.js', function () {
     'use strict';
@@ -35,18 +36,23 @@ describe('config_parse.js', function () {
     });
 
     describe('getProperty:', function () {
+        beforeEach(function () {
+            mockProcess = { exit: function () {}};
+
+            spyOn(mockProcess,'exit');
+            configParser = require('./../bin/config-parser')(mockConfig, mockProcess);
+        });
+
         it('should return results with right param', function () {
             expect(configParser.getProperty('commitConvention').length).toBeGreaterThan(0);
         });
-        xit('should throw error without params', function () {
-            expect(function() {
-                configParser.getProperty();
-            }).toThrow(new Error('Undefined Property'));
+        it('should call process.exit(1) without params', function () {
+            configParser.getProperty();
+            expect(mockProcess.exit).toHaveBeenCalledWith(1);
         });
-        xit('should throw error with an unknown property', function () {
-            expect(function() {
-                configParser.getProperty('hola-test');
-            }).toThrow(new Error('Undefined Property'));
+        it('should call process.exit(1) with an unknown property', function () {
+            configParser.getProperty('hola-test');
+            expect(mockProcess.exit).toHaveBeenCalledWith(1);
         });
         it('should return result with a property that It has boolean value', function () {
             expect(configParser.getProperty('debug')).toBe(false);
