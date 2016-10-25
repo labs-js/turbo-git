@@ -37,10 +37,8 @@ describe('config_parse.js', function () {
 
     describe('getProperty:', function () {
         beforeEach(function () {
-            mockProcess = { exit: function () {}};
-
-            spyOn(mockProcess,'exit');
-            configParser = require('./../bin/config-parser')(mockConfig, mockProcess);
+            spyOn(helpers.mockProcess,'exit');
+            configParser = require('./../bin/config-parser')(mockConfig, helpers.mockProcess);
         });
 
         it('should return results with right param', function () {
@@ -48,11 +46,11 @@ describe('config_parse.js', function () {
         });
         it('should call process.exit(1) without params', function () {
             configParser.getProperty();
-            expect(mockProcess.exit).toHaveBeenCalledWith(1);
+            expect(helpers.mockProcess.exit).toHaveBeenCalledWith(1);
         });
         it('should call process.exit(1) with an unknown property', function () {
             configParser.getProperty('hola-test');
-            expect(mockProcess.exit).toHaveBeenCalledWith(1);
+            expect(helpers.mockProcess.exit).toHaveBeenCalledWith(1);
         });
         it('should return result with a property that It has boolean value', function () {
             expect(configParser.getProperty('debug')).toBe(false);
