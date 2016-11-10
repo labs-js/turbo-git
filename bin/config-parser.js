@@ -53,6 +53,10 @@ module.exports = function(_configJson, _process) {
             return self.commits;
         }
 
+        function getLogCommand() {
+            return self.turboLog.gitLogCommand;
+        }
+
         function getProperty(prop) {
             if (!self.config.hasOwnProperty(prop)) {
                 utils.showError('Undefined Property ' + (prop || '') +
