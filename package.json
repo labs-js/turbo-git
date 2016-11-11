@@ -41,6 +41,7 @@
   "bin": {
     "git-turbo": "./lib/git/git-turbo.js",
     "git-tc": "./lib/git/git-tc.js",
+    "git-tl": "./lib/git/git-tl.js",
     "turbo": "./lib/cli.js"
   },
   "devDependencies": {
