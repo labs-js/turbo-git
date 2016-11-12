@@ -1,23 +1,31 @@
 #!/usr/bin/env node
 var consoleMock  = require('console-mock'), 
     consoleTest = consoleMock.create(), 
-    turboAdd = require('../lib/turbo-add'),
-    childProcess = require('child_process');
+    TurboAdd = require('../lib/commands/add'),
+    childProcess = require('child_process'),
+    add;
 
 describe('turbo-add', function(){
     'use strict';
 
+    beforeEach(function(){
+    
+        add = new TurboAdd(); 
+        console.log(add);
+    });
+
     it('init', function(){
         var gitPorcelainOutput =  '?? file1.js \n?? file2.js';
+        
         var getNoStagedFilesValue = ['file1.js','file2.js'];
         
         spyOn(childProcess, "exec").andReturn(gitPorcelainOutput);
 
-        spyOn("getNoStagedFiles").andReturn(getNoStagedFilesValue);
+        //spyOn("getNoStagedFiles").andReturn(getNoStagedFilesValue);
        
-        turboAdd.init(); 
+        add.init(); 
         
-        spyOn('promptFileSelection').toHaveBeenCalledWith(getNoStagedFilesValue);
+       // spyOn('promptFileSelection').toHaveBeenCalledWith(getNoStagedFilesValue);
     });
      
 });
