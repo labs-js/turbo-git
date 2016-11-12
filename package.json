@@ -16,13 +16,14 @@
     "url": "git+https://github.com/labs-js/turbo-commit.git"
   },
   "keywords": [
-    "tc",
+    "git",
+    "commit convention",
     "turbo-commit",
     "commit",
-    "git",
     "convetion",
     "cli",
-    "change-log"
+    "change-log",
+    "git plugin"
   ],
   "author": "js-labs",
   "license": "MIT",
