@@ -3,8 +3,7 @@ var mockConfig = require('./mock.config.json'),
     configParser = require('./../bin/config-parser')(mockConfig),
     defaultConf = require('./../bin/config.json'),
     shell = require('shelljs'),
-    helpers = require('./helpers'),
-    mockProcess;
+    helpers = require('./helpers');
 
 describe('config_parse.js', function () {
     'use strict';
@@ -39,7 +38,7 @@ describe('config_parse.js', function () {
     });
     describe('getLogCommand:', function () {
         it('should return a string with a command', function () {
-            expect(typeof configParser.getLogCommand()).toBe("string");
+            expect(typeof configParser.getLogCommand()).toBe('string');
         });
     });
 
