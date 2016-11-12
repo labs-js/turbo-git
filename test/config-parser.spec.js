@@ -42,7 +42,7 @@ describe('config_parse.js', function () {
         });
 
         it('should return results with right param', function () {
-            expect(configParser.getProperty('commitConvention').length).toBeGreaterThan(0);
+            expect(typeof configParser.getProperty('commitConvention')).toBe('object');
         });
         it('should call process.exit(1) without params', function () {
             configParser.getProperty();
@@ -67,7 +67,7 @@ describe('config_parse.js', function () {
             helpers.gitInitInTempFolder();
             shell.cat('../test/mock.config.json').to('.turbocommit');
             configParser = require('./../bin/config-parser')();
-            expect(configParser.getCommitConf()).toEqual(mockConfig.commitConvention);
+            expect(configParser.getCommitConf()).toEqual(mockConfig.commitConvention.commitDesc);
             helpers.finishTemp();
         });
         // it('should call to init conf command if there is not .turbocommit file', function () {
