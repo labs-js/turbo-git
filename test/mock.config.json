@@ -1,18 +1,27 @@
 {
-  "gitLogCommand": "git log -n50 --reverse",
-  "turboLogParsingLimit": 50,
-  "turboLogExtras": {},
-  "commitConvention": [
-    {
-      "tag": "[TAG]",
-      "desc": "This is a mock desc.",
-      "color": "green"
+    "turboLog": {
+        "gitLogCommand": "git log -n50 --reverse",
+        "turboLogParsingLimit": 50
     },
-    {
-      "tag": "[TAG2]",
-      "desc": "This is a mock desc 2.",
-      "color": "yellow"
-    }
-  ],
-  "debug": false
+    "turboCommit": {
+        "turboLogExtras": {}
+    },
+    "commitConvention": {
+        "tagPrefix": "",
+        "tagSuffix": "",
+        "commitDesc": [{
+            "tag": "[TEST]",
+            "desc": "features commits, adding lines of code.",
+            "color": "green"
+        }, {
+            "tag": "[TAG]",
+            "desc": "bug fixing commits.",
+            "color": "yellow"
+        }, {
+            "tag": "[TAG2]",
+            "desc": "change commits, tiny changes, modifying the way of do something.",
+            "color": "blue"
+        }]
+    },
+    "debug": false
 }
