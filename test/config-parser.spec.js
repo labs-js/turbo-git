@@ -23,6 +23,9 @@ describe('config_parse.js', function () {
         it('getProperty', function () {
             expect(configParser.getProperty);
         });
+        it('getLogCommand', function () {
+            expect(configParser.getLogCommand);
+        });
     });
     describe('getTagsFormat:', function () {
         it('should return an array with elements', function () {
@@ -32,6 +35,11 @@ describe('config_parse.js', function () {
     describe('getCommitConf:', function () {
         it('should return results', function () {
             expect(configParser.getCommitConf().length).toBeGreaterThan(0);
+        });
+    });
+    describe('getLogCommand:', function () {
+        it('should return a string with a command', function () {
+            expect(typeof configParser.getLogCommand()).toBe("string");
         });
     });
 
