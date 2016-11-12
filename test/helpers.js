@@ -3,10 +3,14 @@ var shell = require('shelljs');
 
 module.exports = (function () {
     'use strict';
+    var mockProcess;
+
+    mockProcess = { exit: function () {} };
 
     return {
         gitInitInTempFolder:gitInitInTempFolder,
-        finishTemp: finishTemp
+        finishTemp: finishTemp,
+        mockProcess: mockProcess
     };
 
     ///////////////

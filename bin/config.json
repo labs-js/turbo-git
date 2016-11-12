@@ -1,41 +1,43 @@
 {
-  "commits": [
-    {
-      "tag": "[ADD]",
-      "desc": "features commits, adding lines of code.",
-      "color": "green"
+    "turboLog": {
+        "gitLogCommand": "git log -n50 --reverse",
+        "turboLogParsingLimit": 50
     },
-    {
-      "tag": "[FIX]",
-      "desc": "bug fixing commits.",
-      "color": "yellow"
+    "turboCommit": {
+        "turboLogExtras": {}
     },
-    {
-      "tag": "[MOD]",
-      "desc": "change commits, tiny changes, modifying the way of do something.",
-      "color": "blue"
+    "commitConvention": {
+        "tagPrefix": "",
+        "tagSuffix": "",
+        "commitDesc": [{
+            "tag": "[ADD]",
+            "desc": "features commits, adding lines of code.",
+            "color": "green"
+        }, {
+            "tag": "[FIX]",
+            "desc": "bug fixing commits.",
+            "color": "yellow"
+        }, {
+            "tag": "[MOD]",
+            "desc": "change commits, tiny changes, modifying the way of do something.",
+            "color": "blue"
+        }, {
+            "tag": "[DEL]",
+            "desc": "deleting commits, code cleanup, remove old libs, deleting files.",
+            "color": "red"
+        }, {
+            "tag": "[REF]",
+            "desc": "refactor commits, part of a refactor, big changes.",
+            "color": "cyan"
+        }, {
+            "tag": "[BRK]",
+            "desc": "breaking changes commits, when we break old APIs.",
+            "color": "magenta"
+        }, {
+            "tag": "[MRG]",
+            "desc": "merge commits.",
+            "color": "white"
+        }]
     },
-    {
-      "tag": "[DEL]",
-      "desc": "deleting commits, code cleanup, remove old libs, deleting files.",
-      "color": "red"
-    },
-    {
-      "tag": "[REF]",
-      "desc": "refactor commits, part of a refactor, big changes.",
-      "color": "cyan"
-    },
-    {
-      "tag": "[BRK]",
-      "desc": "breaking changes commits, when we break old APIs.",
-      "color": "magenta"
-    },
-    {
-      "tag": "[MRG]",
-      "desc": "merge commits.",
-      "color": "white"
-    }
-  ],
-  "debug": false,
-  "gitLogDefaultLimit": 50
+    "debug": false
 }

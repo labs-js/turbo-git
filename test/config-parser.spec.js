@@ -22,6 +22,9 @@ describe('config_parse.js', function () {
         it('getProperty', function () {
             expect(configParser.getProperty);
         });
+        it('getLogCommand', function () {
+            expect(configParser.getLogCommand);
+        });
     });
     describe('getTagsFormat:', function () {
         it('should return an array with elements', function () {
@@ -33,20 +36,28 @@ describe('config_parse.js', function () {
             expect(configParser.getCommitConf().length).toBeGreaterThan(0);
         });
     });
+    describe('getLogCommand:', function () {
+        it('should return a string with a command', function () {
+            expect(typeof configParser.getLogCommand()).toBe('string');
+        });
+    });
 
     describe('getProperty:', function () {
+        beforeEach(function () {
+            spyOn(helpers.mockProcess,'exit');
+            configParser = require('./../bin/config-parser')(mockConfig, helpers.mockProcess);
+        });
+
         it('should return results with right param', function () {
-            expect(configParser.getProperty('commits').length).toBeGreaterThan(0);
+            expect(typeof configParser.getProperty('commitConvention')).toBe('object');
         });
-        it('should throw error without params', function () {
-            expect(function() {
-                configParser.getProperty();
-            }).toThrow(new Error('Undefined Property'));
+        it('should call process.exit(1) without params', function () {
+            configParser.getProperty();
+            expect(helpers.mockProcess.exit).toHaveBeenCalledWith(1);
         });
-        it('should throw error with an unknown property', function () {
-            expect(function() {
-                configParser.getProperty('hola-test');
-            }).toThrow(new Error('Undefined Property'));
+        it('should call process.exit(1) with an unknown property', function () {
+            configParser.getProperty('hola-test');
+            expect(helpers.mockProcess.exit).toHaveBeenCalledWith(1);
         });
         it('should return result with a property that It has boolean value', function () {
             expect(configParser.getProperty('debug')).toBe(false);
@@ -56,14 +67,14 @@ describe('config_parse.js', function () {
     describe('init:', function () {
         it('should read the default conf without .turbocommit', function () {
             configParser = require('./../bin/config-parser')();
-            expect(configParser.getProperty('commits')).toEqual(defaultConf.commits);
+            expect(configParser.getProperty('commitConvention')).toEqual(defaultConf.commitConvention);
         });
 
         it('should read the config for the .turbocommit file if exists', function () {
             helpers.gitInitInTempFolder();
             shell.cat('../test/mock.config.json').to('.turbocommit');
             configParser = require('./../bin/config-parser')();
-            expect(configParser.getCommitConf()).toEqual(mockConfig.commits);
+            expect(configParser.getCommitConf()).toEqual(mockConfig.commitConvention.commitDesc);
             helpers.finishTemp();
         });
         // it('should call to init conf command if there is not .turbocommit file', function () {

@@ -1,13 +1,12 @@
 {
   "name": "turbo-commit",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "CLI tool for Turbo Commit convention",
   "main": "./lib/cli.js",
   "scripts": {
     "test": "nyc jasmine-node --verbose --captureExceptions test",
     "test:watch": "npm test & onchange bin/*.js lib/*.js test/* -- npm test",
-    "coverage": "nyc report --reporter=text-lcov > coverage.json",
-    "release": "standard-version"
+    "coverage": "nyc report --reporter=text-lcov > coverage.json"
   },
   "engines": {
     "node": "6.5.0"
@@ -17,13 +16,14 @@
     "url": "git+https://github.com/labs-js/turbo-commit.git"
   },
   "keywords": [
-    "tc",
+    "git",
+    "commit convention",
     "turbo-commit",
     "commit",
-    "git",
     "convetion",
     "cli",
-    "change-log"
+    "change-log",
+    "git plugin"
   ],
   "author": "js-labs",
   "license": "MIT",
@@ -40,6 +40,9 @@
   },
   "bin": {
     "git-turbo": "./lib/git/git-turbo.js",
+    "git-tc": "./lib/git/git-tc.js",
+    "git-tl": "./lib/git/git-tl.js",
+    "git-ta": "./lib/git/git-ta.js",
     "turbo": "./lib/cli.js"
   },
   "devDependencies": {
@@ -47,7 +50,6 @@
     "eslint": "^3.4.0",
     "jasmine-node": "^1.14.5",
     "nyc": "^8.1.0",
-    "onchange": "^3.0.0",
-    "standard-version": "^2.4.0"
+    "onchange": "^3.0.0"
   }
 }

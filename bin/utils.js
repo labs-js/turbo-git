@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-module.exports = function (_console) {
+module.exports = function (_console, _process) {
     'use strict';
-    return (function (console) {
+    return (function (console, process) {
         var childProcess = require('child_process'),
             Promise = require('promise');
 
@@ -37,9 +37,18 @@ module.exports = function (_console) {
         }
 
         function getGitRepoMainPath() {
-            var res = childProcess.execSync('git rev-parse --show-toplevel', {encoding: 'UTF-8'});
+            var check = childProcess.spawnSync('git',['branch']),
+                err = check.stderr.toString().trim(),
+                res;
+
+            if (err) {
+                showError(err);
+                return process.exit(1);//exit process with code error
+            }
+
+            res = childProcess.execSync('git rev-parse --show-toplevel', {encoding: 'UTF-8'});
 
             return res.trim();
         }
-    })(_console || console);
+    })(_console || console, _process || process);
 };

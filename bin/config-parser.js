@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 var shell = require('shelljs'),
     fs = require('fs'),
     path = require('path'),
@@ -6,29 +7,31 @@ var shell = require('shelljs'),
 
 shell.config.silent = false;
 
-module.exports = function (_configJson) {
+module.exports = function(_configJson, _process) {
     'use strict';
     var configJson,
         dotFileConfPath;
 
     dotFileConfPath = path.join(utils.getGitRepoMainPath(), '.turbocommit');
 
-    if ( shell.test('-f', dotFileConfPath ) ) {//check if there a .turbocommit config file
+    if (shell.test('-f', dotFileConfPath)) { //check if there a .turbocommit config file
         configJson = JSON.parse(fs.readFileSync(dotFileConfPath, 'utf8'));
-    } else {//otherwise use default conf
-        configJson =  require('./config.json');
+    } else { //otherwise use default conf
+        configJson = require('./config.json');
     }
 
-    return (function (configJson) {
+    return (function(configJson, process) {
         var self = {};
 
         self.config = configJson;
-        self.commits = getProperty('commits');
+        self.commits = getProperty('commitConvention').commitDesc;
+        self.turboLog = getProperty('turboLog');
 
         return {
             getTagsFormat: getTagsFormat,
             getCommitConf: getCommitConf,
-            getProperty: getProperty
+            getProperty: getProperty,
+            getLogCommand: getLogCommand
         };
 
         ////////////////
@@ -50,12 +53,17 @@ module.exports = function (_configJson) {
             return self.commits;
         }
 
+        function getLogCommand() {
+            return self.turboLog.gitLogCommand;
+        }
+
         function getProperty(prop) {
             if (!self.config.hasOwnProperty(prop)) {
-                throw new Error('Undefined Property');
+                utils.showError('Undefined Property ' + (prop || '') +
+                    '\nPlease check your .turbocommit file');
+                process.exit(1);
             }
             return self.config[prop];
         }
-
-    })(_configJson || configJson);
+    })(_configJson || configJson, _process || process);
 };
