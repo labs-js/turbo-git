@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 var consoleMock = require('console-mock'),
-    console = consoleMock.create(),
-    utils = require('./utils')(console),
+    _console = consoleMock.create(),
+    utils = require('./../bin/utils')(_console),
     childProcess = require('child_process'),
-    shell = require('shelljs');
+    shell = require('shelljs'),
+    helpers = require('./helpers');
 
 require('colors');
 
@@ -14,19 +15,6 @@ consoleMock.enabled(false);//disable console.log prints
 describe('utils.js', function () {
     'use strict';
 
-    function gitInitInTempFolder () {
-        shell.rm('-rf', 'tmp');
-        shell.config.silent = true;
-        shell.mkdir('tmp');
-        shell.cd('tmp');
-        shell.exec('git init');
-    }
-
-    function finishTemp () {
-        shell.cd('../');
-        shell.rm('-rf', 'tmp');
-    }
-
     describe('should have defined', function () {
         it('checkGitRepoExistence', function () {
             expect(utils.checkGitRepoExistence).toBeDefined();
@@ -34,13 +22,16 @@ describe('utils.js', function () {
         it('showError', function () {
             expect(utils.showError).toBeDefined();
         });
+        it('getGitRepoMainPath', function () {
+            expect(utils.getGitRepoMainPath).toBeDefined();
+        });
     });
     describe('behavior', function () {
         describe('showError', function () {
             beforeEach( function () {
                 // consoleMock.enabled(true);
                 // consoleMock.historyClear();
-                spyOn(console, 'log');
+                spyOn(_console, 'log');
                 spyOn(childProcess, 'exec');
             });
 
@@ -49,15 +40,15 @@ describe('utils.js', function () {
             });
             it('should call console.log', function () {
                 utils.showError();
-                expect(console.log).toHaveBeenCalled();
+                expect(_console.log).toHaveBeenCalled();
             });
             it('should call console.log with error without params', function () {
                 utils.showError();
-                expect(console.log).toHaveBeenCalledWith('error'.magenta);
+                expect(_console.log).toHaveBeenCalledWith('error'.magenta);
             });
             it('should call console.log with the param passed', function () {
                 utils.showError('hola');
-                expect(console.log).toHaveBeenCalledWith('hola'.magenta);
+                expect(_console.log).toHaveBeenCalledWith('hola'.magenta);
             });
         });
         describe('checkGitRepoExistence', function () {
@@ -83,22 +74,38 @@ describe('utils.js', function () {
                 expect(childProcess.exec).toHaveBeenCalledWith('git branch');
             });
 
-            describe('with a real git repo', function () {
+            describe('tests with a real git repo:', function () {
                 it('should resolve the promise with a git repo init', function (done) {
-                    gitInitInTempFolder();
+                    helpers.gitInitInTempFolder();
                     utils.checkGitRepoExistence().then(function () {
-                        finishTemp();
+                        helpers.finishTemp();
                         done();
                     });
                 });
                 it('should reject the promise without a git repo and return a error string', function (done) {
-                    finishTemp();
+                    helpers.finishTemp();
                     shell.cd('../'); //there is no repo here I guess
                     utils.checkGitRepoExistence().catch(function (data) {
                         expect(typeof data).toBe('string');
                         done();
                     });
                 });
+            });
+        });
+        describe('getGitRepoMainPath', function () {
+            beforeEach(function () {
+                spyOn(helpers.mockProcess,'exit').andCallThrough();
+                utils = require('./../bin/utils')(_console,helpers.mockProcess);
+            });
+
+            it('should call process.exit(1) without repo', function () {
+                utils.getGitRepoMainPath();
+                expect(helpers.mockProcess.exit).toHaveBeenCalledWith(1);
+            });
+            it('should return a string path inside of git repo', function () {
+                helpers.gitInitInTempFolder();
+                expect(typeof utils.getGitRepoMainPath()).toBe('string');
+                helpers.finishTemp();
             });
         });
     });
