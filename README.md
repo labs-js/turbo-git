@@ -18,7 +18,7 @@ Wouldn't it be great to have a tool that ensure all of this for you and for your
 
     npm install -g turbo-commit
 
-Then you're able to use the `turbo` command. From git: `git turbo <command>` or with the git alias: 'git tc','git tl' and 'git ta'
+Then you're able to use the `turbo` command. From git: `git turbo <command>` or with the git alias: `git tc`,`git tl` and `git ta`
 
 
 ## Demo (outdate, now this is even better)
