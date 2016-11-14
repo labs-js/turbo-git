@@ -60,19 +60,23 @@ module.exports = function(_configJson, _process) {
         }
 
         function getCommitPromptText(propName) {
-            var validProps = ['title', 'component', 'desc'],
-                propInConf;
+            var propInConf,
+                mapProps = {
+                    'title': 'textAskTitle',
+                    'desc': 'textAskDesc',
+                    'component': 'textAskComponent'
+                };
 
-            if ( !(propName in validProps) ) {
+            if ( !(propName in mapProps) ) {
                 return false;
             }
 
-            propInConf = conf.turboCommit[propName];
-
-            if (propInConf == "") {
+            propInConf = conf.turboCommit[mapProps[propName]];
+            /*eslint-disable*/
+            if (propInConf == '') {
                 return false;
             }
-
+            /*eslint-enable*/
             return propInConf;
         }
 
