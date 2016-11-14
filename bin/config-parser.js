@@ -26,12 +26,14 @@ module.exports = function(_configJson, _process) {
         conf.config = configJson;
         conf.commits = getProperty('commitConvention').commitDesc;
         conf.turboLog = getProperty('turboLog');
+        conf.turboCommit = getProperty('turboCommit');
 
         return {
             getTagsFormat: getTagsFormat,
             getCommitConf: getCommitConf,
             getProperty: getProperty,
             getLogCommand: getLogCommand,
+            getCommitPromptText: getCommitPromptText
         };
 
         ////////////////
