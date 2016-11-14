@@ -62,6 +62,7 @@ module.exports = function(_configJson, _process) {
         function getCommitPromptText(propName) {
             var propInConf,
                 mapProps = {
+                    'tag': 'textAskTag',
                     'title': 'textAskTitle',
                     'desc': 'textAskDesc',
                     'component': 'textAskComponent'
