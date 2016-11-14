@@ -21,17 +21,17 @@ module.exports = function(_configJson, _process) {
     }
 
     return (function(configJson, process) {
-        var self = {};
+        var conf = {};
 
-        self.config = configJson;
-        self.commits = getProperty('commitConvention').commitDesc;
-        self.turboLog = getProperty('turboLog');
+        conf.config = configJson;
+        conf.commits = getProperty('commitConvention').commitDesc;
+        conf.turboLog = getProperty('turboLog');
 
         return {
             getTagsFormat: getTagsFormat,
             getCommitConf: getCommitConf,
             getProperty: getProperty,
-            getLogCommand: getLogCommand
+            getLogCommand: getLogCommand,
         };
 
         ////////////////
@@ -40,7 +40,7 @@ module.exports = function(_configJson, _process) {
             var tagFormat = [],
                 colors = require('colors/safe');
 
-            self.commits.forEach(function (val) {
+            conf.commits.forEach(function(val) {
                 tagFormat.push({
                     'name': colors[val.color](val.tag + ' : ' + val.desc),
                     'value': val.tag
@@ -50,20 +50,37 @@ module.exports = function(_configJson, _process) {
         }
 
         function getCommitConf() {
-            return self.commits;
+            return conf.commits;
         }
 
         function getLogCommand() {
-            return self.turboLog.gitLogCommand;
+            return conf.turboLog.gitLogCommand;
+        }
+
+        function getCommitPromptText(propName) {
+            var validProps = ['title', 'component', 'desc'],
+                propInConf;
+
+            if ( !(propName in validProps) ) {
+                return false;
+            }
+
+            propInConf = conf.turboCommit[propName];
+
+            if (propInConf == "") {
+                return false;
+            }
+
+            return propInConf;
         }
 
         function getProperty(prop) {
-            if (!self.config.hasOwnProperty(prop)) {
+            if (!conf.config.hasOwnProperty(prop)) {
                 utils.showError('Undefined Property ' + (prop || '') +
                     '\nPlease check your .turbocommit file');
                 process.exit(1);
             }
-            return self.config[prop];
+            return conf.config[prop];
         }
     })(_configJson || configJson, _process || process);
 };
