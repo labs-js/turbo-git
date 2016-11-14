@@ -25,6 +25,9 @@ describe('config_parse.js', function () {
         it('getLogCommand', function () {
             expect(configParser.getLogCommand);
         });
+        it('getCommitPromptTex', function () {
+            expect(configParser.getCommitPromptText);
+        });
     });
     describe('getTagsFormat:', function () {
         it('should return an array with elements', function () {
@@ -36,9 +39,39 @@ describe('config_parse.js', function () {
             expect(configParser.getCommitConf().length).toBeGreaterThan(0);
         });
     });
+
     describe('getLogCommand:', function () {
         it('should return a string with a command', function () {
             expect(typeof configParser.getLogCommand()).toBe('string');
+        });
+    });
+
+    describe('getCommitPromptText:', function () {
+        it('should return false without params', function () {
+            expect(configParser.getCommitPromptText()).toBeFalsy();
+        });
+        it('should return false with an unknown prop parameter', function () {
+            expect(configParser.getCommitPromptText('prop212321')).toBeFalsy();
+        });
+        it('should return false if the prop is set on "" in the conf', function () {
+            mockConfig.turboCommit.textAskDesc = '';
+            configParser = require('./../bin/config-parser')(mockConfig);
+            expect(configParser.getCommitPromptText('desc')).toBeFalsy();
+        });
+        it('should return false if the prop is set on false in the conf', function () {
+            mockConfig.turboCommit.textAskDesc = false;
+            configParser = require('./../bin/config-parser')(mockConfig);
+            expect(configParser.getCommitPromptText('desc')).toBeFalsy();
+        });
+        it('should return false if the prop is set on 0 in the conf', function () {
+            mockConfig.turboCommit.textAskDesc = 0;
+            configParser = require('./../bin/config-parser')(mockConfig);
+            expect(configParser.getCommitPromptText('desc')).toBeFalsy();
+        });
+        it('should retun the string with the right value', function () {
+            mockConfig.turboCommit.textAskDesc = 'description here';
+            configParser = require('./../bin/config-parser')(mockConfig);
+            expect(configParser.getCommitPromptText('desc')).toBe('description here');
         });
     });
 
