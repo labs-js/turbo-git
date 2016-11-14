@@ -5,7 +5,7 @@
     "turboCommit": {
         "textAskTitle": "Select tag for your turbo-commit: ",
         "textAskComponent": "Type component affected (empty for ommit):",
-        "texytAskDesc": "Insert commit description (empty for omit):"
+        "textAskDesc": "Insert commit description (empty for omit):"
     },
     "commitConvention": {
         "tagPrefix": "",
