@@ -3,9 +3,10 @@
         "gitLogCommand": "git log -n50 --reverse"
     },
     "turboCommit": {
-        "textAskTitle": "Select tag for your turbo-commit: ",
-        "textAskComponent": "Type component affected (empty for ommit):",
-        "textAskDesc": "Insert commit description (empty for omit):"
+        "textAskTag": "Select tag for your turbo-commit: ",
+        "textAskComponent": "",
+        "textAskTitle": "Type commit title (mandatory):",
+        "textAskDesc": "Commit description (leave it empty for omit):"
     },
     "commitConvention": {
         "tagPrefix": "",
