@@ -1,10 +1,12 @@
 {
     "turboLog": {
-        "gitLogCommand": "git log -n50 --reverse",
-        "turboLogParsingLimit": 50
+        "gitLogCommand": "git log -n50 --reverse"
     },
     "turboCommit": {
-        "turboLogExtras": {}
+        "textAskTag": "Select commit type: ",
+        "textAskComponent": "Insert affected component:",
+        "textAskTitle": "Type commit title:",
+        "textAskDesc": "Type commit description (leave it empty for omit):"
     },
     "commitConvention": {
         "tagPrefix": "",
