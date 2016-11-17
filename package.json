@@ -9,7 +9,7 @@
     "coverage": "nyc report --reporter=text-lcov > coverage.json"
   },
   "engines": {
-    "node": "6.5.0"
+    "node": "7"
   },
   "repository": {
     "type": "git",
