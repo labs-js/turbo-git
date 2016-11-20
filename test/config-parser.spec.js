@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var mockConfig = require('./mock.config.json'),
-    configParser = require('./../bin/config-parser')(mockConfig),
-    defaultConf = require('./../bin/config.json'),
+    configParser = require('./../lib/config/config-parser')(mockConfig),
+    defaultConf = require('./../lib/config/config.json'),
     shell = require('shelljs'),
     helpers = require('./helpers');
 
@@ -9,7 +9,7 @@ describe('config_parse.js', function () {
     'use strict';
 
     beforeEach(function () {
-        configParser = require('./../bin/config-parser')(mockConfig);
+        configParser = require('./../lib/config/config-parser')(mockConfig);
     });
 
     describe('should have defined:', function () {
@@ -55,22 +55,22 @@ describe('config_parse.js', function () {
         });
         it('should return false if the prop is set on "" in the conf', function () {
             mockConfig.turboCommit.textAskDesc = '';
-            configParser = require('./../bin/config-parser')(mockConfig);
+            configParser = require('./../lib/config/config-parser')(mockConfig);
             expect(configParser.getCommitPromptText('desc')).toBeFalsy();
         });
         it('should return false if the prop is set on false in the conf', function () {
             mockConfig.turboCommit.textAskDesc = false;
-            configParser = require('./../bin/config-parser')(mockConfig);
+            configParser = require('./../lib/config/config-parser')(mockConfig);
             expect(configParser.getCommitPromptText('desc')).toBeFalsy();
         });
         it('should return false if the prop is set on 0 in the conf', function () {
             mockConfig.turboCommit.textAskDesc = 0;
-            configParser = require('./../bin/config-parser')(mockConfig);
+            configParser = require('./../lib/config/config-parser')(mockConfig);
             expect(configParser.getCommitPromptText('desc')).toBeFalsy();
         });
         it('should retun the string with the right value', function () {
             mockConfig.turboCommit.textAskDesc = 'description here';
-            configParser = require('./../bin/config-parser')(mockConfig);
+            configParser = require('./../lib/config/config-parser')(mockConfig);
             expect(configParser.getCommitPromptText('desc')).toBe('description here');
         });
     });
@@ -78,7 +78,7 @@ describe('config_parse.js', function () {
     describe('getProperty:', function () {
         beforeEach(function () {
             spyOn(helpers.mockProcess,'exit');
-            configParser = require('./../bin/config-parser')(mockConfig, helpers.mockProcess);
+            configParser = require('./../lib/config/config-parser')(mockConfig, helpers.mockProcess);
         });
 
         it('should return results with right param', function () {
@@ -99,14 +99,14 @@ describe('config_parse.js', function () {
 
     describe('init:', function () {
         it('should read the default conf without .turbocommit', function () {
-            configParser = require('./../bin/config-parser')();
+            configParser = require('./../lib/config/config-parser')();
             expect(configParser.getProperty('commitConvention')).toEqual(defaultConf.commitConvention);
         });
 
         it('should read the config for the .turbocommit file if exists', function () {
             helpers.gitInitInTempFolder();
             shell.cat('../test/mock.config.json').to('.turbocommit');
-            configParser = require('./../bin/config-parser')();
+            configParser = require('./../lib/config/config-parser')();
             expect(configParser.getCommitConf()).toEqual(mockConfig.commitConvention.commitDesc);
             helpers.finishTemp();
         });

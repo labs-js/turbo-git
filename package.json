@@ -2,10 +2,10 @@
   "name": "turbo-commit",
   "version": "0.8.0",
   "description": "CLI tool for Turbo Commit convention",
-  "main": "./lib/cli.js",
+  "main": "bin/cli.js",
   "scripts": {
     "test": "nyc jasmine-node --verbose --captureExceptions test",
-    "test:watch": "npm test & onchange bin/*.js lib/*.js test/* -- npm test",
+    "test:watch": "npm test & onchange lib/*.js bin/*.js test/* -- npm test",
     "coverage": "nyc report --reporter=text-lcov > coverage.json"
   },
   "engines": {
@@ -39,11 +39,11 @@
     "shelljs": "^0.7.4"
   },
   "bin": {
-    "git-turbo": "./lib/git/git-turbo.js",
-    "git-tc": "./lib/git/git-tc.js",
-    "git-tl": "./lib/git/git-tl.js",
-    "git-ta": "./lib/git/git-ta.js",
-    "turbo": "./lib/cli.js"
+    "git-turbo": "bin/git/git-turbo.js",
+    "git-tc": "bin/git/git-tc.js",
+    "git-tl": "bin/git/git-tl.js",
+    "git-ta": "bin/git/git-ta.js",
+    "turbo": "bin/cli.js"
   },
   "devDependencies": {
     "console-mock": "^1.0.24",

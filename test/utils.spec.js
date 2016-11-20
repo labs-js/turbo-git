@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var consoleMock = require('console-mock'),
     _console = consoleMock.create(),
-    utils = require('./../bin/utils')(_console),
+    utils = require('./../lib/config/utils')(_console),
     childProcess = require('child_process'),
     shell = require('shelljs'),
     helpers = require('./helpers');
@@ -95,7 +95,7 @@ describe('utils.js', function () {
         describe('getGitRepoMainPath', function () {
             beforeEach(function () {
                 spyOn(helpers.mockProcess,'exit').andCallThrough();
-                utils = require('./../bin/utils')(_console,helpers.mockProcess);
+                utils = require('./../lib/config/utils')(_console,helpers.mockProcess);
             });
 
             it('should call process.exit(1) without repo', function () {
