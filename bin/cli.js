@@ -3,8 +3,6 @@ var program = require('commander'),
     pkg     = require('../package.json'),
     version = pkg.version;
 
-require('colors');
-
 program
     .version(version)
     .command('commit', 'execute a turbo commit')
