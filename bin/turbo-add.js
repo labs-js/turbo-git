@@ -4,7 +4,7 @@
     var Add = require('./../lib/commands/add'),
         addCommand = new Add();
 
-    require('./../lib/config/config-parser')();
+    require('turbo-git-config').parse;
 
     addCommand.init();
 })();
