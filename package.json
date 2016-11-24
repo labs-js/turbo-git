@@ -36,7 +36,8 @@
     "commander": "^2.9.0",
     "inquirer": "^1.1.2",
     "promise": "^7.1.1",
-    "shelljs": "^0.7.4"
+    "shelljs": "^0.7.4",
+    "turbo-git-config": "^0.1.0"
   },
   "bin": {
     "git-turbo": "bin/git/git-turbo.js",
