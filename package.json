@@ -1,7 +1,7 @@
 {
-  "name": "turbo-commit",
-  "version": "0.8.0",
-  "description": "CLI tool for Turbo Commit convention",
+  "name": "turbo-git",
+  "version": "0.0.0",
+  "description": "git improvements & implement commit convention",
   "main": "bin/cli.js",
   "scripts": {
     "test": "nyc jasmine-node --verbose --captureExceptions test",
@@ -13,10 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/labs-js/turbo-commit.git"
+    "url": "git+https://github.com/labs-js/turbo-git.git"
   },
   "keywords": [
     "git",
+    "turbo-git",
     "commit convention",
     "turbo-commit",
     "commit",
@@ -28,9 +29,9 @@
   "author": "Samuel Fabrizio <samuelfabrizio@gmail.com>, Alan Campora <alan.campora@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/labs-js/turbo-commit/issues"
+    "url": "https://github.com/labs-js/turbo-git/issues"
   },
-  "homepage": "https://github.com/labs-js/turbo-commit#readme",
+  "homepage": "https://github.com/labs-js/turbo-git#readme",
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
@@ -38,7 +39,7 @@
     "promise": "^7.1.1",
     "shelljs": "^0.7.4",
     "turbo-git-config": "^0.1.0",
-    "turbo-git-log": "^0.1.0"
+    "turbo-git-log": "^0.2.0"
   },
   "bin": {
     "git-turbo": "bin/git/git-turbo.js",
