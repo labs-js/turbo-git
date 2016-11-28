@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../../lib/commands/commit');
+require('turbo-git-commit')();
