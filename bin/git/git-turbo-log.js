@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../../lib/commands/log');
+require('../turbo-log');

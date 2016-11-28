@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('./git-turbo-log');
+require('../turbo-log');
