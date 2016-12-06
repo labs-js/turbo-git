@@ -9,34 +9,44 @@
 
 # Turbo Git
 
-This CLI tool was originally thought for implementing the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. You can use it with any other commit convention (aviable soon). And it's also good for tuning out of the box git commands.
+This CLI tool was originally thought for implementing the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. You can use it with any other commit convention just choosing one with an utility command. And it's also good for tuning out of the box git commands.
 
-If you enjoy the good quality software and you work hard for have it, You'll enjoy using a commit convention on your projects that ensures readability and understanding. For sure you can also make some great improvements on how you use git in the command line everyday.
+If you enjoy the good quality software and you work hard for have it, You'll enjoy using a commit convention on your projects that ensures readability and understanding. You can also make some greats improvements on how you use git in the command line everyday.
 Wouldn't it be great to have a tool that ensure all of this for you and for your team?
 
 ## Install
 
     npm install -g turbo-git
 
-Then you're able to use the `turbo` command. From git: `git turbo <command>` or with the git alias: `git tc`,`git tl` and `git ta`
+Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 
-
-## Demo (outdate, now this is even better)
+## Demo (outdate)
 <img src="assets/demo.gif" width="600"/>
 
+
+## Aviaible Commands 
+
+ Turbo command    | Git Alias       | Desciption    |
+| -------------   | -------------   | ------------- | 
+| `turbo init`    | `git ti`        | Init command, set a commit convention for a git repository.  |
+| `turbo commit`  | `git tc`        | Execute a turbo commit using a convention.   |
+| `turbo log`     | `git tl`        | Show the turbo log, git log with colors according your convention  |
+| `turbo add`     | `git ta`        | Turbo add, utility for execute a git add is a easier way.   |
+
+> Note: The turbo command will work also from git: `git turbo <command>`
 
 
 ## How to use
 
-All the turbo commands will also be available in git. So you will able to do `turbo command`, `git turbo command` or with the git alias as well.
+This is an example using the [Turbo Commit](https://github.com/labs-js/turbo-git/blob/master/CONVENTION.md) Convention.
 
-> First, add someting to commit you can use `git add` or our `git ta` as well.. If you choose use the *turbo add* you will be prompted with the following:
+> First, add someting to commit you can use `turbo add` or our `git ta` as well. You will be prompted with the following:
 
 <img src="assets/prompt-turbo-add.png" alt="prompt-turbo-add.png" width="200"/>
 
-Select what you want to add by moving with the arrow key and pressing space.. then enter. (This will be improve it soon, with a better UX)
+Select what you want to add by moving with the arrow key and pressing space.. then enter.
 
-> Now you are able to di your first *Turbo Commit* with the command `git tc` as follows:
+> Now you are able to do a *Turbo Commit* with the command `git tc` as follows:
 
     git tc
 
@@ -44,10 +54,10 @@ After that, you'll see the possible tags for your turbo-commits:
 
 <img src="assets/prompt-tag-preview.png" alt="prompt-tag-screnshoot" width="600"/>
 
->Choose your tag to wrap your commit message, press enter.
->Now insert your commit title and the description, if you want, and you're done.
+>Choose the tag to wrap your commit message, press enter.
+>Now insert your commit title and the optional description and you're done.
 
-Congrats! You did your first **Turbo Commit**.
+Congrats! You did your first **Turbo Commit**. 😎
 
 Now, you can see it in your **Turbo Log**. Executing `git tl` you will se the git log with the corresponding commit color.
 
@@ -56,8 +66,6 @@ Now, you can see it in your **Turbo Log**. Executing `git tl` you will se the gi
 ## Coming soon
 
 - Improvements in the existing turbo commands adding functionalitty and a beter UX.
-
-- We are working on implementing other commit conventions by a file configuration. You will able to use a convention per repository. And also you will able to write your own convention easily.
 
 - We'll continue working on add new **turbo-commands** that will have some extra magic, any idea/help is welcome.
 
