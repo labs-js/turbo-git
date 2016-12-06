@@ -1,10 +1,10 @@
-# Turbo Commit
+# Turbo Commit Convention
 
-A simple and powerful convention for our Git commits.
+### A simple and powerful convention for our Git commits.
 
 *Main idea: Every commit done should have a TAG inside the title message.*
 
-This will create git logs nicer and easier to see. Some extra magic comes after it with the [Turbo Commit CLI](/README.md)
+This will create git logs nicer and easier to see. Some extra magic comes after it with the [Turbo Git CLI](/README.md)
 
 
 # Example:
@@ -27,12 +27,11 @@ This will create git logs nicer and easier to see. Some extra magic comes after 
      [DEL] : deleting commits, code cleanup, remove old libs, deleting files.
      [REF] : refactor commits, part of a refactor, big changes.
      [BRK] : breaking changes commits, when we break old APIs.
-     [MRG] : merge commits.
 
 > Why only 3 letter?
 
 > 1. Best way to keep it simple and nice to see in git log
-> 2. It will be easier to do some search by tag, or write some nice regex, etc.
+> 2. It will be easier to do some search by tag, write some nice regex, It looks better in this way, etc.
 
 
 >Furthermore, if you are using any issue tracker add the issue at the end of the title something like `#issue-23`*
