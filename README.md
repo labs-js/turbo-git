@@ -40,7 +40,7 @@ Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 
 This is an example using the [Turbo Commit](https://github.com/labs-js/turbo-git/blob/master/CONVENTION.md) Convention.
 
-> First, add someting to commit you can use `turbo add` or our `git ta` as well. You will be prompted with the following:
+> First, add something to commit you can use `turbo add` or our `git ta` as well. You will be prompted with the following:
 
 <img src="assets/prompt-turbo-add.png" alt="prompt-turbo-add.png" width="200"/>
 
@@ -62,6 +62,8 @@ Congrats! You did your first **Turbo Commit**. 😎
 Now, you can see it in your **Turbo Log**. Executing `git tl` you will se the git log with the corresponding commit color.
 
 <img src="assets/prompt-turbo-log.png" alt="prompt-tag-screnshoot" width="400"/>
+
+Now you have a semantic git log 😎🙌
 
 ## Coming soon
 
