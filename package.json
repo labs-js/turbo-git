@@ -1,6 +1,6 @@
 {
   "name": "turbo-git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Making your git even more awesome!",
   "main": "bin/cli.js",
   "scripts": {
