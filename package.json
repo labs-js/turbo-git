@@ -1,7 +1,7 @@
 {
   "name": "turbo-git",
   "version": "1.0.0",
-  "description": "Semantic Git with these plugins commands",
+  "description": "Making your git even more awesome!",
   "main": "bin/cli.js",
   "scripts": {
     "test": "nyc jasmine-node --verbose --captureExceptions test",
