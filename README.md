@@ -9,7 +9,7 @@
 
 # Turbo Git
 
-This CLI tool was originally thought for implementing the [turbo-commit](/CONVENTION.md) convention easily. Now It's more than that.. You can use it with any other commit convention just choosing one with an utility command. And it's also good for tuning out of the box git commands.
+This CLI tool was originally thought for implementing the [Turbo Commit Convention](/CONVENTION.md) easily. Now It's more than that.. You can use it with any other commit convention just choosing one with an utility command. And it's also good for tuning out of the box git commands.
 
 If you enjoy the good quality software and you work hard for have it, You'll enjoy using a commit convention on your projects that ensures readability and understanding. You can also make some greats improvements on how you use git in the command line everyday.
 Wouldn't it be great to have a tool that ensure all of this for you and for your team?
@@ -38,7 +38,7 @@ Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 
 ## How to use
 
-This is an example using the [Turbo Commit](https://github.com/labs-js/turbo-git/blob/master/CONVENTION.md) Convention.
+This is an example using the [Turbo Commit Convention](https://github.com/labs-js/turbo-git/blob/master/CONVENTION.md).
 
 > First, add something to commit you can use `turbo add` or our `git ta` as well. You will be prompted with the following:
 
@@ -90,6 +90,8 @@ The **.turbogit** file.. It's just a json that you can easilly edit to your need
 
 
 ## Coming soon
+
+- Turbo changelog command, for autogenerate changelogs based on any commit convention.
 
 - Improvements in the existing turbo commands adding functionalitty and a beter UX.
 
