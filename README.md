@@ -65,15 +65,39 @@ Now, you can see it in your **Turbo Log**. Executing `git tl` you will se the gi
 
 Now you have a semantic git log 😎🙌
 
+
+## Commit Conventions
+
+If you want **Turbo Git** allows you work with any other commit convention. We provide some of them with the `turbo init` command and you can create one by your own in an easy way. You are able also to use different conventions per git repository that's what the  **.turbogit** file exactly does. You can create the **.turbogit** as follow:
+```
+git turbo init
+```
+or just
+```
+git ti
+```
+You will see the following options:
+
+- Turbo Commit
+- Angular
+- Open UI5
+- Custom
+
+You can choose whatever you want.. and this init command will create a **.turbogit** file on your repo.
+The **.turbogit** file.. It's just a json that you can easilly edit to your needs. 
+
+> The Custom option is not doing to much at the moment. It's just creating the **.turbogit** file with some explanations about how to edit it.
+
+
 ## Coming soon
 
 - Improvements in the existing turbo commands adding functionalitty and a beter UX.
 
 - We'll continue working on add new **turbo-commands** that will have some extra magic, any idea/help is welcome.
 
-## Badge
+## Convention Badge
 
-Be proud like we are, that you are using the Turbo Commit convention.. add the Badge to your projects.
+If you choose use the [Turbo Commit Convention](https://github.com/labs-js/turbo-commit/blob/master/README.md) Be proud like we are.. add the Badge to your projects 😁
 
 <a href="https://github.com/labs-js/turbo-commit/blob/master/README.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
 
