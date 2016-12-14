@@ -24,7 +24,7 @@ Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 <img src="assets/demo.gif" width="600"/>
 
 
-## Aviaible Commands 
+## Available Commands 
 
  Turbo command    | Git Alias       | Desciption    |
 | -------------   | -------------   | ------------- | 
