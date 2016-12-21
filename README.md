@@ -24,10 +24,10 @@ Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 <img src="assets/demo.gif" width="600"/>
 
 
-## Available Commands 
+## Available Commands
 
  Turbo command    | Git Alias       | Desciption    |
-| -------------   | -------------   | ------------- | 
+| -------------   | -------------   | ------------- |
 | `turbo init`    | `git ti`        | Init command, set a commit convention for a git repository.  |
 | `turbo commit`  | `git tc`        | Execute a turbo commit using a convention.   |
 | `turbo log`     | `git tl`        | Show the turbo log, git log with colors according your convention  |
@@ -84,7 +84,7 @@ You will see the following options:
 - Custom
 
 You can choose whatever you want.. and this init command will create a **.turbogit** file on your repo.
-The **.turbogit** file.. It's just a json that you can easilly edit to your needs. 
+The **.turbogit** file.. It's just a json that you can easilly edit to your needs.
 
 > The Custom option is not doing to much at the moment. It's just creating the **.turbogit** file with some explanations about how to edit it.
 
@@ -110,3 +110,21 @@ Markdown
 Html
 
     <a href="https://github.com/labs-js/turbo-git/blob/master/README.md"><img src="https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg" alt="Turbo Commit: On"/></a>
+
+## Related Projects
+
+> These packages were created for make turbogit posible:
+
+[turbo-git-config](https://github.com/labs-js/turbo-git-config)
+[turbo-git-commit](https://github.com/labs-js/turbo-git-commit)
+[turbo-git-log](https://github.com/labs-js/turbo-git-log)
+[turbo-git-add](https://github.com/labs-js/turbo-git-add)
+[turbo-git-init](https://github.com/labs-js/turbo-git-init)
+[turbo-git-starter-generator](https://github.com/labs-js/turbo-git-starter-generator)
+
+> And thanks to these great projects that we use a lot:
+
+[inquirer](https://www.npmjs.com/package/inquirer)
+[colors](https://www.npmjs.com/package/colors)
+[commander](https://www.npmjs.com/package/commander)
+[shelljs](https://www.npmjs.com/package/shelljs)
