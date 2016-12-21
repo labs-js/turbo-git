@@ -115,16 +115,16 @@ Html
 
 > These packages were created for make turbogit posible:
 
-[turbo-git-config](https://github.com/labs-js/turbo-git-config)
-[turbo-git-commit](https://github.com/labs-js/turbo-git-commit)
-[turbo-git-log](https://github.com/labs-js/turbo-git-log)
-[turbo-git-add](https://github.com/labs-js/turbo-git-add)
-[turbo-git-init](https://github.com/labs-js/turbo-git-init)
-[turbo-git-starter-generator](https://github.com/labs-js/turbo-git-starter-generator)
+- [turbo-git-config](https://github.com/labs-js/turbo-git-config)
+- [turbo-git-commit](https://github.com/labs-js/turbo-git-commit)
+- [turbo-git-log](https://github.com/labs-js/turbo-git-log)
+- [turbo-git-add](https://github.com/labs-js/turbo-git-add)
+- [turbo-git-init](https://github.com/labs-js/turbo-git-init)
+- [turbo-git-starter-generator](https://github.com/labs-js/turbo-git-starter-generator)
 
 > And thanks to these great projects that we use a lot:
 
-[inquirer](https://www.npmjs.com/package/inquirer)
-[colors](https://www.npmjs.com/package/colors)
-[commander](https://www.npmjs.com/package/commander)
-[shelljs](https://www.npmjs.com/package/shelljs)
+- [inquirer](https://www.npmjs.com/package/inquirer)
+- [colors](https://www.npmjs.com/package/colors)
+- [commander](https://www.npmjs.com/package/commander)
+- [shelljs](https://www.npmjs.com/package/shelljs)
