@@ -4,8 +4,6 @@
 [![npm](https://img.shields.io/npm/v/turbo-git.svg?style=flat)](https://www.npmjs.com/package/turbo-git)
 [![bitHound](https://www.bithound.io/github/labs-js/turbo-git/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-git) [![codecov](https://codecov.io/gh/labs-js/turbo-git/branch/develop/graph/badge.svg)](https://codecov.io/gh/labs-js/turbo-git)
 
-[![gitter](https://img.shields.io/gitter/room/turbo-commit/turbo-commit.svg?style=flat)](https://gitter.im/turbo-commit/Lobby)
-
 
 # Turbo Git
 
