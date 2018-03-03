@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-(function(){
+(function() {
     'use strict';
     var Add = require('turbo-git-add'),
         addCommand = new Add();
