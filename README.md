@@ -24,12 +24,13 @@ Hurrah! Now you're able to use the turbo commands! 🎉🙌✨
 
 ## Available Commands
 
- Turbo command    | Git Alias       | Desciption    |
-| -------------   | -------------   | ------------- |
-| `turbo init`    | `git ti`        | Init command, set a commit convention for a git repository.  |
-| `turbo commit`  | `git tc`        | Execute a turbo commit using a convention.   |
-| `turbo log`     | `git tl`        | Show the turbo log, git log with colors according your convention  |
-| `turbo add`     | `git ta`        | Turbo add, utility for execute a git add is a easier way.   |
+ Turbo command    | Git Alias         | Desciption    |
+| -------------   | -------------     | ------------- |
+| `turbo init`    | `git ti`          | Init command, set a commit convention for a git repository.  |
+| `turbo commit`  | `git tc`          | Execute a turbo commit using a convention.   |
+| `turbo log`     | `git tl`          | Show the turbo log, git log with colors according your convention  |
+| `turbo add`     | `git ta`          | Turbo add, utility for execute a git add is a easier way.   |
+| `turbo diff`    | `git td [options]`| Turbo diff, improved diff using [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) |
 
 > Note: The turbo command will work also from git: `git turbo <command>`
 
@@ -118,6 +119,7 @@ Html
 - [turbo-git-log](https://github.com/labs-js/turbo-git-log)
 - [turbo-git-add](https://github.com/labs-js/turbo-git-add)
 - [turbo-git-init](https://github.com/labs-js/turbo-git-init)
+- [turbo-git-diff](https://github.com/labs-js/turbo-git-diff)
 - [turbo-git-starter-generator](https://github.com/labs-js/turbo-git-starter-generator)
 
 > And thanks to these great projects that we use a lot:
@@ -126,3 +128,4 @@ Html
 - [colors](https://www.npmjs.com/package/colors)
 - [commander](https://www.npmjs.com/package/commander)
 - [shelljs](https://www.npmjs.com/package/shelljs)
+- [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
