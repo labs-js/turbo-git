@@ -41,14 +41,16 @@
     "turbo-git-add": "^0.2.0",
     "turbo-git-commit": "^0.2.0",
     "turbo-git-config": "^0.4.2",
+    "turbo-git-diff": "0.0.1",
     "turbo-git-init": "^0.3.0",
     "turbo-git-log": "^0.3.0"
   },
   "bin": {
     "git-turbo": "bin/git/git-turbo.js",
-    "git-tc": "bin/git/git-tc.js",
-    "git-tl": "bin/git/git-tl.js",
     "git-ta": "bin/git/git-ta.js",
+    "git-tc": "bin/git/git-tc.js",
+    "git-td": "bin/git/git-td.js",
+    "git-tl": "bin/git/git-tl.js",
     "git-ti": "bin/git/git-ti.js",
     "turbo": "bin/cli.js"
   },
