@@ -41,7 +41,7 @@
     "turbo-git-add": "^0.2.0",
     "turbo-git-commit": "^0.2.0",
     "turbo-git-config": "^0.4.2",
-    "turbo-git-diff": "0.0.1",
+    "turbo-git-diff": "^0.1.0",
     "turbo-git-init": "^0.3.0",
     "turbo-git-log": "^0.3.0"
   },
