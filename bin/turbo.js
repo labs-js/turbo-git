@@ -3,6 +3,9 @@ var program = require('commander'),
     pkg     = require('../package.json'),
     version = pkg.version;
 
+process.stdout.isTTY = true;
+require('colors');
+
 program
     .version(version)
     .command('add', 'from git: `git ta`, utility for execute a git add is a easier way.')

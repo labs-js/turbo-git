@@ -2,7 +2,7 @@
   "name": "turbo-git",
   "version": "1.1.0",
   "description": "Making your git even more awesome!",
-  "main": "bin/cli.js",
+  "main": "bin/turbo.js",
   "scripts": {
     "test": "nyc jasmine-node --verbose --captureExceptions test",
     "test:watch": "npm test & onchange lib/*.js bin/*.js test/* -- npm test",
@@ -48,7 +48,7 @@
     "git-td": "bin/git/git-td.js",
     "git-tl": "bin/git/git-tl.js",
     "git-ti": "bin/git/git-ti.js",
-    "turbo": "bin/cli.js"
+    "turbo": "bin/turbo.js"
   },
   "devDependencies": {
     "console-mock": "^1.0.24",
