@@ -3,8 +3,6 @@
 
 * [FIX] git turbo command ([63caec6](https://github.com/labs-js/turbo-git/commit/63caec6))
 
-
-
 <a name="1.2.0"></a>
 ## 1.2.0 (2018-03-24)
 
@@ -25,8 +23,6 @@
 * [MOD] turbo-diff dep update ([b4b89ec](https://github.com/labs-js/turbo-git/commit/b4b89ec))
 * [MOD] update dep turbo-git-init ([976b2cb](https://github.com/labs-js/turbo-git/commit/976b2cb))
 * [MOD] update turbo-git-diff version ([dcead8d](https://github.com/labs-js/turbo-git/commit/dcead8d))
-* 1.2.0 ([2218853](https://github.com/labs-js/turbo-git/commit/2218853))
-
 
 
 <a name="1.1.0"></a>
