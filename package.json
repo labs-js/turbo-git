@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/labs-js/turbo-git#readme",
   "dependencies": {
+    "colors": "^1.3.0",
     "commander": "^2.15.1",
     "turbo-git-add": "^0.2.1",
     "turbo-git-commit": "^0.3.1",
