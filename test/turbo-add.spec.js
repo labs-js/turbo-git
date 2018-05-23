@@ -1,7 +1,7 @@
 const turboAdd = require('../bin/turbo-add');
 
 jest.mock('turbo-git-add', () => {
-    function pepe (){}
+    function pepe () {}
     pepe.prototype.init = jest.fn();
     return pepe;
 });
