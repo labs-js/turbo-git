@@ -7,7 +7,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --watchAll --coverage",
     "coverage": "jest --coverageReporters lcov --json --outputFile coverage.json",
-    "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "lint": "eslint bin/ test/",
+    "lint:fix": "eslint bin/ test/ --fix"
   },
   "engines": {
     "node": "7"
@@ -58,6 +60,8 @@
     "jest": "^22.4.4"
   },
   "jest": {
-    "collectCoverageFrom" : ["bin/**/*.js"]
+    "collectCoverageFrom": [
+      "bin/**/*.js"
+    ]
   }
 }
