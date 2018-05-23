@@ -1,14 +1,13 @@
 {
-  "ecmaFeatures": {
-    "globalReturn": true,
-    "modules": true
+  "parserOptions": {
+    "impliedStrict": true
   },
   "extends": [
     "eslint:recommended"
   ],
   "env": {
     "browser": true,
-    "es6": false,
+    "es6": true,
     "node": true
   },
   "globals": {
@@ -17,7 +16,8 @@
     "afterEach": true,
     "it": true,
     "expect": true,
-    "spyOn": true
+    "spyOn": true,
+    "jest": true
   },
   "plugins": [],
   "rules": {
@@ -35,7 +35,6 @@
     "no-trailing-spaces": [1],
     "comma-dangle": [2, "never"],
     "block-scoped-var": 1,
-    "strict": [1, "function"],
     "indent": 1,
     "camelcase": [2, { "properties": "always" }],
     "curly": 1,
@@ -53,24 +52,5 @@
     "vars-on-top": 1,
     "yoda": [1, "never"],
     "new-cap": 1
-    /* es6 (not yet)
-    "arrow-parens": [1, "always"],
-    "arrow-spacing": [1, { "before": true, "after": true }],
-    "constructor-super": 1,
-    "generator-star-spacing": [1, { "before": true, "after": false }],
-    "no-class-assign": 1,
-    "no-const-assign": 1,
-    "no-dupe-class-members": 1,
-    "no-this-before-super": 1,
-    "no-var": 1,
-    "object-shorthand": [1, "always"],
-    "prefer-arrow-callback": 1,
-    "prefer-const": 1,
-    "prefer-spread": 1,
-    "prefer-reflect": [1, { exceptions: ["apply", "call", "defineProperty", "getOwnPropertyDescriptor", "getPrototypeOf", "setPrototypeOf", "isExtensible", "getOwnPropertyNames", "preventExtensions", "delete"] }],
-    "prefer-template": 1,
-    "require-yield": 1
-    */
   }
-  // "parser": "babel-eslint"
 }

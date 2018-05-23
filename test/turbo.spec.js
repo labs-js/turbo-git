@@ -14,7 +14,6 @@ jest.mock('commander', () => {
 });
 
 describe('turbo', () => {
-    'use strict';
     it('should return an object', () => {
         expect(typeof turbo).toBe('object');
     });
