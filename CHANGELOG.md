@@ -1,9 +1,62 @@
-<a name="1.2.1"></a>
+## <small>1.2.2 (2021-09-24)</small>
+
+* [ADD] changelog generation on every version ([4e4c3e0](https://github.com/labs-js/turbo-git/commit/4e4c3e0))
+* [ADD] dep turbo-git-add to the project ([6213e0d](https://github.com/labs-js/turbo-git/commit/6213e0d))
+* [ADD] dependency turbo-git-commit ([14670cf](https://github.com/labs-js/turbo-git/commit/14670cf))
+* [ADD] git hooks: commit & push ([cca9b50](https://github.com/labs-js/turbo-git/commit/cca9b50))
+* [ADD] implement turbo init command ([0efbdc3](https://github.com/labs-js/turbo-git/commit/0efbdc3))
+* [ADD] npm scripts for eslint ([a116054](https://github.com/labs-js/turbo-git/commit/a116054))
+* [ADD] readme: add TODO changelog command ([04f7fb9](https://github.com/labs-js/turbo-git/commit/04f7fb9))
+* [ADD] readme: Aviaible Commands table ([3edbb97](https://github.com/labs-js/turbo-git/commit/3edbb97))
+* [ADD] readme: init command doc ([909ad28](https://github.com/labs-js/turbo-git/commit/909ad28))
+* [ADD] readme: re add Related projects section ([d6e1e8f](https://github.com/labs-js/turbo-git/commit/d6e1e8f))
+* [ADD] turbo-diff implementation ([e5fac44](https://github.com/labs-js/turbo-git/commit/e5fac44))
+* [ADD] turbo-diff: now is passing parameters ([ecf8226](https://github.com/labs-js/turbo-git/commit/ecf8226))
+* [ADD] turbo-diff: options parameters ([368267a](https://github.com/labs-js/turbo-git/commit/368267a))
+* [ADD] unit test: turbo add ([a6c0c65](https://github.com/labs-js/turbo-git/commit/a6c0c65))
+* [ADD] update dependencies ([f2fa203](https://github.com/labs-js/turbo-git/commit/f2fa203))
+* [ADD] update project dependencies ([286a13e](https://github.com/labs-js/turbo-git/commit/286a13e))
+* [ADD] update turbo-git-config ([da9425d](https://github.com/labs-js/turbo-git/commit/da9425d))
+* [DEL] Readme: remove gitter link ([14db61a](https://github.com/labs-js/turbo-git/commit/14db61a))
+* [DEL] remove commit command from the project ([2f63a35](https://github.com/labs-js/turbo-git/commit/2f63a35))
+* [DEL] remove turbo add command from the project ([b021c9e](https://github.com/labs-js/turbo-git/commit/b021c9e))
+* [DEL] remove unused deps ([8c48a86](https://github.com/labs-js/turbo-git/commit/8c48a86))
+* [DEL] unused test helper file ([fed6ea6](https://github.com/labs-js/turbo-git/commit/fed6ea6))
+* [FIX] add missing dep 'colors' ([a6d4d1a](https://github.com/labs-js/turbo-git/commit/a6d4d1a))
+* [FIX] liting warn ([61cb75f](https://github.com/labs-js/turbo-git/commit/61cb75f))
+* [FIX] package description ([726efd0](https://github.com/labs-js/turbo-git/commit/726efd0))
+* [FIX] readme: Related Projects layout ([ab3102a](https://github.com/labs-js/turbo-git/commit/ab3102a))
+* [FIX] readme: typo (#8) ([57a1e29](https://github.com/labs-js/turbo-git/commit/57a1e29)), closes [#8](https://github.com/labs-js/turbo-git/issues/8)
+* [FIX] turbo command reference ([9c64d5c](https://github.com/labs-js/turbo-git/commit/9c64d5c))
+* [MOD] dep update turbo-git-commit ([06c5c08](https://github.com/labs-js/turbo-git/commit/06c5c08))
+* [MOD] eslint: enable es6 & update config ([0531601](https://github.com/labs-js/turbo-git/commit/0531601))
+* [MOD] Implement use of turbo-git-commit package ([aeda44e](https://github.com/labs-js/turbo-git/commit/aeda44e))
+* [MOD] jest: add coverage collect pattern ([73a50cf](https://github.com/labs-js/turbo-git/commit/73a50cf))
+* [MOD] pkg: change test runner to JEST ([2753356](https://github.com/labs-js/turbo-git/commit/2753356))
+* [MOD] readme: some improvements ([5a2514c](https://github.com/labs-js/turbo-git/commit/5a2514c))
+* [MOD] readme: update add turbo-diff info ([5bcc5f4](https://github.com/labs-js/turbo-git/commit/5bcc5f4))
+* [MOD] travis: run on nodeJs versions 8 & 10 ([2c6ea66](https://github.com/labs-js/turbo-git/commit/2c6ea66))
+* [MOD] turbo cmd: add basic unit test ([9428e59](https://github.com/labs-js/turbo-git/commit/9428e59))
+* [MOD] turbo-diff dep update ([3cc95f2](https://github.com/labs-js/turbo-git/commit/3cc95f2))
+* [MOD] unit test linting, add missing space ([ae677f8](https://github.com/labs-js/turbo-git/commit/ae677f8))
+* [MOD] update dep turbo-git-init ([e09c831](https://github.com/labs-js/turbo-git/commit/e09c831))
+* [MOD] update package turbo-git-config ([3c2a308](https://github.com/labs-js/turbo-git/commit/3c2a308))
+* [MOD] update turbo commit convention desc ([e0e6b37](https://github.com/labs-js/turbo-git/commit/e0e6b37))
+* [MOD] update turbo-git-diff version ([8b6461a](https://github.com/labs-js/turbo-git/commit/8b6461a))
+* 1.0.0 ([b7652f4](https://github.com/labs-js/turbo-git/commit/b7652f4))
+* 1.0.1 ([d4afcec](https://github.com/labs-js/turbo-git/commit/d4afcec))
+* 1.1.0 ([b3929ba](https://github.com/labs-js/turbo-git/commit/b3929ba))
+* 1.2.0 ([261f8cc](https://github.com/labs-js/turbo-git/commit/261f8cc))
+
+
+
 ## <small>1.2.1 (2018-04-06)</small>
 
 * [FIX] git turbo command ([63caec6](https://github.com/labs-js/turbo-git/commit/63caec6))
+* 1.2.1 ([4155b2b](https://github.com/labs-js/turbo-git/commit/4155b2b))
 
-<a name="1.2.0"></a>
+
+
 ## 1.2.0 (2018-03-24)
 
 * [ADD] changelog generation on every version ([8a147a5](https://github.com/labs-js/turbo-git/commit/8a147a5))
@@ -23,9 +76,10 @@
 * [MOD] turbo-diff dep update ([b4b89ec](https://github.com/labs-js/turbo-git/commit/b4b89ec))
 * [MOD] update dep turbo-git-init ([976b2cb](https://github.com/labs-js/turbo-git/commit/976b2cb))
 * [MOD] update turbo-git-diff version ([dcead8d](https://github.com/labs-js/turbo-git/commit/dcead8d))
+* 1.2.0 ([2218853](https://github.com/labs-js/turbo-git/commit/2218853))
 
 
-<a name="1.1.0"></a>
+
 ## 1.1.0 (2016-12-13)
 
 * [ADD] readme: add TODO changelog command ([3d537ce](https://github.com/labs-js/turbo-git/commit/3d537ce))
@@ -36,7 +90,6 @@
 
 
 
-<a name="1.0.0"></a>
 ## 1.0.0 (2016-12-13)
 
 * [ADD] dep turbo-git-add to the project ([293c5d0](https://github.com/labs-js/turbo-git/commit/293c5d0))
@@ -56,7 +109,6 @@
 
 
 
-<a name="1.0.0-0"></a>
 ## 1.0.0-0 (2016-11-28)
 
 * [ADD] add console-mock devDep for testing propouse ([29a5881](https://github.com/labs-js/turbo-git/commit/29a5881))
@@ -205,7 +257,6 @@
 
 
 
-<a name="0.6.0"></a>
 ## 0.6.0 (2016-09-05)
 
 * [ADD] Check existence of .git files ([7ce3309](https://github.com/labs-js/turbo-git/commit/7ce3309))
@@ -288,7 +339,6 @@
 
 
 
-<a name="0.2.0"></a>
 ## 0.2.0 (2016-08-29)
 
 * [32m colors for tags ([e4e334f](https://github.com/labs-js/turbo-git/commit/e4e334f))
@@ -315,26 +365,35 @@
 
 
 
-<a name="0.1.2"></a>
+## <small>0.1.1 (2016-08-27)</small>
+
+* [MOD] update project description in package.json ([55e72be](https://github.com/labs-js/turbo-git/commit/55e72be))
+* 0.1.1 ([ee28522](https://github.com/labs-js/turbo-git/commit/ee28522))
+
+
+
 ## <small>0.1.2 (2016-08-28)</small>
 
+* [FIX] Inquire dependency change from devDependency to dependecies ([329c852](https://github.com/labs-js/turbo-git/commit/329c852))
 * 0.1.1 ([c80e2be](https://github.com/labs-js/turbo-git/commit/c80e2be))
 * 0.1.2 ([a0aa710](https://github.com/labs-js/turbo-git/commit/a0aa710))
 
 
 
-<a name="0.1.1"></a>
+## 0.1.0 (2016-08-27)
+
+* 0.1.0 ([f5b24f8](https://github.com/labs-js/turbo-git/commit/f5b24f8))
+
+
+
 ## <small>0.1.1 (2016-08-27)</small>
 
-* [FIX] Inquire dependency change from devDependency to dependecies ([329c852](https://github.com/labs-js/turbo-git/commit/329c852))
-* [MOD] update project description in package.json ([55e72be](https://github.com/labs-js/turbo-git/commit/55e72be))
 * [MRG] pull request #4 from labs-js/fix-inquire-dependecy ([8c879af](https://github.com/labs-js/turbo-git/commit/8c879af)), closes [#4](https://github.com/labs-js/turbo-git/issues/4)
 * 0.1.1 ([ee28522](https://github.com/labs-js/turbo-git/commit/ee28522))
 * Fix remove babel (#5) ([bcdfe28](https://github.com/labs-js/turbo-git/commit/bcdfe28)), closes [#5](https://github.com/labs-js/turbo-git/issues/5)
 
 
 
-<a name="0.1.0"></a>
 ## 0.1.0 (2016-08-27)
 
 * [ADD] first commit using tc ([7b5ad8c](https://github.com/labs-js/turbo-git/commit/7b5ad8c))
