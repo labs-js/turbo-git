@@ -16,8 +16,20 @@ const NODE_MAJOR = parseInt(process.versions.node, 10);
 // resolve on windows (cmd.exe) — skip its e2e tests there.
 const IT_NOT_WINDOWS = process.platform === 'win32' ? it.skip : it;
 
+// git subcommands and hooks (e.g. husky pre-push) export GIT_* vars such as
+// GIT_PREFIX or GIT_DIR; leaked into the spawned CLIs they poison them
+// (diff.sh does `cd "$GIT_PREFIX"`) and redirect the git calls the suite
+// makes itself. Strip them so the suite is hermetic wherever it runs.
+const CLEAN_ENV = {};
+
+Object.keys(process.env).forEach(function (key) {
+    if (!/^GIT_/.test(key)) {
+        CLEAN_ENV[key] = process.env[key];
+    }
+});
+
 function sh(cmd, cwd) {
-    return childProcess.execSync(cmd, { cwd: cwd, encoding: 'utf8' });
+    return childProcess.execSync(cmd, { cwd: cwd, encoding: 'utf8', env: CLEAN_ENV });
 }
 
 function makeTempRepo() {
@@ -39,14 +51,14 @@ function runTurbo(args, cwd, timeout) {
     var bin = path.join(REPO_ROOT, 'bin', 'turbo.js');
 
     return childProcess.spawnSync(process.execPath, [bin].concat(args), {
-        cwd: cwd, encoding: 'utf8', timeout: timeout || 15000
+        cwd: cwd, encoding: 'utf8', timeout: timeout || 15000, env: CLEAN_ENV
     });
 }
 
 function runShim(relPath, args, cwd, timeout) {
     return childProcess.spawnSync(process.execPath,
         [path.join(REPO_ROOT, relPath)].concat(args || []), {
-            cwd: cwd, encoding: 'utf8', timeout: timeout || 15000
+            cwd: cwd, encoding: 'utf8', timeout: timeout || 15000, env: CLEAN_ENV
         });
 }
 
@@ -100,13 +112,14 @@ function runInPty(nodeBin, relScript, cwd, steps) {
     if (process.platform === 'darwin') {
         // BSD script (macOS) takes the command as plain args, no -c flag
         child = childProcess.spawn('script', ['-q', '/dev/null', nodeBin, scriptPath],
-            { cwd: cwd });
+            { cwd: cwd, env: CLEAN_ENV });
     } else {
         var cmd = [nodeBin, scriptPath].map(function (p) {
             return "'" + p + "'";
         }).join(' ');
 
-        child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'], { cwd: cwd });
+        child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'],
+            { cwd: cwd, env: CLEAN_ENV });
     }
     var out = '';
 
