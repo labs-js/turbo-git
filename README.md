@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/labs-js/turbo-git.svg?)](https://travis-ci.org/labs-js/turbo-git)
-[![Code Climate](https://codeclimate.com/github/labs-js/turbo-git/badges/gpa.svg)](https://codeclimate.com/github/labs-js/turbo-git)
-[![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-git/blob/master/CONVENTION.md)
+[![Test Linux](https://github.com/labs-js/turbo-git/actions/workflows/test-linux.yml/badge.svg?branch=develop)](https://github.com/labs-js/turbo-git/actions/workflows/test-linux.yml)
+[![Test macOS](https://github.com/labs-js/turbo-git/actions/workflows/test-macos.yml/badge.svg?branch=develop)](https://github.com/labs-js/turbo-git/actions/workflows/test-macos.yml)
+[![Test Windows](https://github.com/labs-js/turbo-git/actions/workflows/test-windows.yml/badge.svg?branch=develop)](https://github.com/labs-js/turbo-git/actions/workflows/test-windows.yml)
+[![Turbo Commit](https://img.shields.io/badge/Turbo_Commit-on-3DD1F2.svg)](https://github.com/labs-js/turbo-git/blob/develop/CONVENTION.md)
 [![npm](https://img.shields.io/npm/v/turbo-git.svg?style=flat)](https://www.npmjs.com/package/turbo-git)
-[![bitHound](https://www.bithound.io/github/labs-js/turbo-git/badges/score.svg)](https://www.bithound.io/github/labs-js/turbo-git) [![codecov](https://codecov.io/gh/labs-js/turbo-git/branch/develop/graph/badge.svg)](https://codecov.io/gh/labs-js/turbo-git)
 
 
 # Turbo Git

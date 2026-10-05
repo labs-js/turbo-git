@@ -1,0 +1,83 @@
+name: Test macOS
+
+on:
+  push:
+    branches: [develop, master]
+  pull_request:
+    branches: [develop, master]
+
+concurrency:
+  group: test-macos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      # The 7 repos are checked out as siblings because the cross-package
+      # dependencies are declared as file:../ links (see AGENTS.md).
+      - uses: actions/checkout@v4
+        with:
+          path: turbo-git
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-config
+          path: turbo-git-config
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-add
+          path: turbo-git-add
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-commit
+          path: turbo-git-commit
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-init
+          path: turbo-git-init
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-log
+          path: turbo-git-log
+      - uses: actions/checkout@v4
+        with:
+          repository: labs-js/turbo-git-diff
+          path: turbo-git-diff
+
+      # node 18 drives the interactive e2e tier (inquirer 5 needs node <= 18);
+      # node 22 runs jest itself. The suite picks the 18 binary up from the
+      # TURBO_E2E_NODE env var.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Register node 18 for the interactive e2e tier
+        run: echo "TURBO_E2E_NODE=$(which node)" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install all repos (fail on non-deprecation npm warnings)
+        run: |
+          set -euo pipefail
+          for d in turbo-git-config turbo-git-add turbo-git-commit \
+                   turbo-git-init turbo-git-log turbo-git-diff turbo-git; do
+            echo "::group::npm ci in $d"
+            (cd "$d" && npm ci --legacy-peer-deps 2>&1 | tee install.log | tail -2)
+            warns=$(grep "npm warn" "$d/install.log" | grep -v "npm warn deprecated" || true)
+            if [ -n "$warns" ]; then
+              echo "::error::$d: unexpected npm warnings:"
+              echo "$warns"
+              exit 1
+            fi
+            rm -f "$d/install.log"
+            echo "::endgroup::"
+          done
+
+      - name: Run unit + e2e tests
+        run: |
+          set -euo pipefail
+          cd turbo-git
+          npm test

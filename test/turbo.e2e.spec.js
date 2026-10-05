@@ -12,6 +12,9 @@ const REPO_ROOT = path.join(__dirname, '..');
 const PKG_VERSION = require(path.join(REPO_ROOT, 'package.json')).version;
 
 const NODE_MAJOR = parseInt(process.versions.node, 10);
+// turbo-git-diff pipes through `sh` (child_process.exec), which does not
+// resolve on windows (cmd.exe) — skip its e2e tests there.
+const IT_NOT_WINDOWS = process.platform === 'win32' ? it.skip : it;
 
 function sh(cmd, cwd) {
     return childProcess.execSync(cmd, { cwd: cwd, encoding: 'utf8' });
@@ -48,6 +51,12 @@ function runShim(relPath, args, cwd, timeout) {
 }
 
 function findLegacyNode() {
+    var fromEnv = process.env.TURBO_E2E_NODE;
+
+    if (fromEnv && fs.existsSync(fromEnv)) {
+        return fromEnv;
+    }
+
     if (NODE_MAJOR <= 18) {
         return process.execPath;
     }
@@ -85,10 +94,20 @@ var CAN_RUN_INTERACTIVE = Boolean(LEGACY_NODE && HAS_PTY);
 // output before typing `data`, so slow startup or a loaded machine cannot
 // desync the keystroke timing.
 function runInPty(nodeBin, relScript, cwd, steps) {
-    var cmd = [nodeBin, path.join(REPO_ROOT, relScript)].map(function (p) {
-        return "'" + p + "'";
-    }).join(' ');
-    var child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'], { cwd: cwd });
+    var scriptPath = path.join(REPO_ROOT, relScript);
+    var child;
+
+    if (process.platform === 'darwin') {
+        // BSD script (macOS) takes the command as plain args, no -c flag
+        child = childProcess.spawn('script', ['-q', '/dev/null', nodeBin, scriptPath],
+            { cwd: cwd });
+    } else {
+        var cmd = [nodeBin, scriptPath].map(function (p) {
+            return "'" + p + "'";
+        }).join(' ');
+
+        child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'], { cwd: cwd });
+    }
     var out = '';
 
     child.stdout.on('data', function (d) { out += d; });
@@ -203,7 +222,7 @@ describe('turbo e2e (temp git repo)', function () {
             expect(res.stdout).toContain('\x1b[36m[E2E] custom convention commit');
         }, 15000);
 
-        it('turbo diff pipes through diff-so-fancy', function () {
+        IT_NOT_WINDOWS('turbo diff pipes through diff-so-fancy', function () {
             fs.appendFileSync(path.join(repo, 'b.txt'), 'd\n');
             var res = runTurbo(['diff'], repo);
 
@@ -218,7 +237,7 @@ describe('turbo e2e (temp git repo)', function () {
             expect(res.stdout).toContain('[E2E] custom convention commit');
         }, 15000);
 
-        it('git td shim pipes through diff-so-fancy', function () {
+        IT_NOT_WINDOWS('git td shim pipes through diff-so-fancy', function () {
             var res = runShim('bin/git/git-td.js', [], repo);
 
             expect(res.status).toBe(0);
