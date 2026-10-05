@@ -32,6 +32,14 @@ function sh(cmd, cwd) {
     return childProcess.execSync(cmd, { cwd: cwd, encoding: 'utf8', env: CLEAN_ENV });
 }
 
+// Deterministic test environment: CI vars disable the `colors` output the
+// log tests assert on, and diff-so-fancy shells out to `tput` (needs TERM).
+CLEAN_ENV.FORCE_COLOR = '1';
+
+if (!CLEAN_ENV.TERM) {
+    CLEAN_ENV.TERM = 'xterm';
+}
+
 function makeTempRepo() {
     var dir = fs.mkdtempSync(path.join(os.tmpdir(), 'turbo-e2e-'));
 
@@ -97,30 +105,80 @@ function findLegacyNode() {
 }
 
 var LEGACY_NODE = findLegacyNode();
-var HAS_PTY = childProcess.spawnSync('sh', ['-c', 'command -v script'],
+var HAS_SCRIPT = childProcess.spawnSync('sh', ['-c', 'command -v script'],
     { encoding: 'utf8' }).status === 0;
-var CAN_RUN_INTERACTIVE = Boolean(LEGACY_NODE && HAS_PTY);
+var HAS_EXPECT = childProcess.spawnSync('sh', ['-c', 'command -v expect'],
+    { encoding: 'utf8' }).status === 0;
+// macOS BSD `script` cannot read piped stdin (tcgetattr on a socket), so
+// darwin drives the pty through `expect` instead; util-linux `script` works
+// everywhere else it exists (windows git-bash has neither).
+var CAN_RUN_INTERACTIVE = process.platform === 'darwin' ? HAS_EXPECT : HAS_SCRIPT;
+
+// macOS only: drives the bin script in a pty via an expect(1) script with
+// the same waitFor/data steps the `script`-based driver uses.
+function runInExpect(nodeBin, relScript, cwd, steps) {
+    var scriptPath = path.join(REPO_ROOT, relScript);
+    var lines = [
+        'set timeout 30',
+        'foreach idx [array names env] {',
+        '    if {[string match "GIT_*" $idx]} { unset env($idx) }',
+        '}',
+        'spawn [lindex $argv 0] [lindex $argv 1]'
+    ];
+
+    steps.forEach(function (step) {
+        lines.push('expect -exact {' + step.waitFor + '}');
+        lines.push('send -- {' + step.data + '}');
+    });
+
+    lines.push('expect eof');
+    lines.push('if {[catch {wait} result]} { exit 1 }');
+    lines.push('exit [lindex $result 3]');
+
+    var tclFile = path.join(os.tmpdir(), 'turbo-e2e-' + Date.now() + '.tcl');
+
+    fs.writeFileSync(tclFile, lines.join('\n') + '\n');
+
+    var child = childProcess.spawn('expect', [tclFile, nodeBin, scriptPath],
+        { cwd: cwd, env: CLEAN_ENV });
+    var out = '';
+
+    return new Promise(function (resolve, reject) {
+        var killer = setTimeout(function () {
+            child.kill('SIGKILL');
+            reject(new Error('timed out in expect run of ' + relScript + '. output:\n' + out));
+        }, 60000);
+
+        child.stdout.on('data', function (d) { out += d; });
+        child.stderr.on('data', function (d) { out += d; });
+        child.on('error', function (err) {
+            clearTimeout(killer);
+            reject(err);
+        });
+        child.on('close', function (code) {
+            clearTimeout(killer);
+            try { fs.unlinkSync(tclFile); } catch (e) { /* best effort */ }
+            resolve({ code: code, out: out });
+        });
+    });
+}
 
 // Drives the given bin script in a pseudo-tty so inquirer prompts can be
 // used non-interactively. Each step waits until `waitFor` shows up in the
 // output before typing `data`, so slow startup or a loaded machine cannot
 // desync the keystroke timing.
 function runInPty(nodeBin, relScript, cwd, steps) {
-    var scriptPath = path.join(REPO_ROOT, relScript);
-    var child;
-
     if (process.platform === 'darwin') {
-        // BSD script (macOS) takes the command as plain args, no -c flag
-        child = childProcess.spawn('script', ['-q', '/dev/null', nodeBin, scriptPath],
-            { cwd: cwd, env: CLEAN_ENV });
-    } else {
-        var cmd = [nodeBin, scriptPath].map(function (p) {
-            return "'" + p + "'";
-        }).join(' ');
-
-        child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'],
-            { cwd: cwd, env: CLEAN_ENV });
+        // BSD script (macOS) cannot read piped stdin — drive via expect
+        return runInExpect(nodeBin, relScript, cwd, steps);
     }
+
+    var scriptPath = path.join(REPO_ROOT, relScript);
+    var cmd = [nodeBin, scriptPath].map(function (p) {
+        return "'" + p + "'";
+    }).join(' ');
+    var child = childProcess.spawn('script', ['-qec', cmd, '/dev/null'],
+        { cwd: cwd, env: CLEAN_ENV });
     var out = '';
 
     child.stdout.on('data', function (d) { out += d; });
