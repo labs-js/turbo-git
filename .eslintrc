@@ -14,6 +14,8 @@
     "describe": true,
     "beforeEach": true,
     "afterEach": true,
+    "beforeAll": true,
+    "afterAll": true,
     "it": true,
     "expect": true,
     "spyOn": true,
