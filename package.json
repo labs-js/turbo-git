@@ -9,7 +9,8 @@
     "coverage": "jest --coverageReporters lcov --json --outputFile coverage.json",
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "lint": "eslint bin/ test/",
-    "lint:fix": "eslint bin/ test/ --fix"
+    "lint:fix": "eslint bin/ test/ --fix",
+    "prepublishOnly": "../test-all.sh --skip-install"
   },
   "engines": {
     "node": ">=7"

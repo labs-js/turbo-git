@@ -1,3 +1,4 @@
-test
-coverage
 assets
+coverage
+.github
+test
