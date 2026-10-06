@@ -1,3 +1,16 @@
+<a name="1.2.4"></a>
+## <small>1.2.4 (2026-10-06)</small>
+
+* [ADD] ci workflows for linux, macos and windows ([b4500f4](https://github.com/labs-js/turbo-git/commit/b4500f4))
+* [ADD] publish: prepublishOnly runs test-all gate ([86f1fd6](https://github.com/labs-js/turbo-git/commit/86f1fd6))
+* [FIX] e2e portable: FORCE_COLOR/TERM env, expect on macos ([834f6e3](https://github.com/labs-js/turbo-git/commit/834f6e3))
+* [FIX] e2e: strip GIT_* env leaked from git hooks ([5a86200](https://github.com/labs-js/turbo-git/commit/5a86200))
+* [FIX] package.json: registry deps instead of file links ([142a19a](https://github.com/labs-js/turbo-git/commit/142a19a))
+* [MOD] ci: bump checkout and setup-node actions to v7 ([73f8057](https://github.com/labs-js/turbo-git/commit/73f8057))
+* [MOD] lockfile: sync file: dep versions ([b3d3b6a](https://github.com/labs-js/turbo-git/commit/b3d3b6a))
+
+
+
 <a name="1.2.3"></a>
 ## <small>1.2.3 (2026-10-05)</small>
 
@@ -15,6 +28,7 @@
 * [MOD] turbo cmd: add basic unit test ([9428e59](https://github.com/labs-js/turbo-git/commit/9428e59))
 * [MOD] unit test linting, add missing space ([ae677f8](https://github.com/labs-js/turbo-git/commit/ae677f8))
 * 1.2.2 ([4873f13](https://github.com/labs-js/turbo-git/commit/4873f13))
+* 1.2.3 ([18ed3fb](https://github.com/labs-js/turbo-git/commit/18ed3fb))
 
 
 
